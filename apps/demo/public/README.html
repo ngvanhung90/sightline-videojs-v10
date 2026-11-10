@@ -1,4 +1,29 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>SIGHTLINE — Developer guide</title><style>body{max-width:760px;margin:60px auto;padding:0 24px;background:#efefe5;color:#24312c;font:16px/1.8 system-ui}h1{font-weight:500;letter-spacing:-.04em}code,pre{background:#dfe5d3;padding:3px 6px}pre{overflow:auto;padding:20px}a{color:#385526}</style><a href="./">← Back to SIGHTLINE</a><h1>Your site. Your sightline.</h1><p>A real Video.js v10 React skin, designed around the picture. Controls sit below the video; Practice adds VTT chapters, direct speeds and an A–B loop without replacing the media instance.</p><p><a href="https://github.com/ngvanhung90/sightline-videojs-v10">Source repository and complete README ↗</a></p><h2>Run the demo</h2><pre>git clone https://github.com/ngvanhung90/sightline-videojs-v10.git
-cd sightline-videojs-v10
-npm ci
-npm run dev</pre><h2>Use the skin</h2><p>Copy <code>src/</code> into your React app. Install <code>@videojs/react@10.3.0</code>, <code>@videojs/core@10.3.0</code>, and <code>cn@0.4.0</code>. Import <code>SightlinePlayer</code> and <code>VideoSkin</code> from that source directory, with <code>Video</code> from <code>@videojs/react/video</code>. Keep one media component mounted inside the skin.</p><h2>Personalize</h2><p>Set <code>--media-accent-color</code>, <code>--media-accent-text-color</code>, <code>--media-border-radius</code> and <code>--media-font-family</code> on the skin. Supply VTT <code>chapters</code> and <code>captions</code> tracks as children of Video.</p><h2>Practice safely</h2><p>Set A at the beginning of a detail, play forward, then set B. B must follow A by at least 0.25 seconds. Reset loop returns to the full video. Choosing a chapter or seeking outside a loop clears that loop. Pass a new <code>sourceKey</code> when changing media. A–B is disabled for live or unknown duration; hosts can force this through <code>practiceDisabled</code>.</p><h2>Keyboard</h2><p>Tab reaches controls; Enter and Space activate buttons. Space/K toggles playback, left/right seek five seconds, up/down adjust volume, M toggles mute, C captions, F fullscreen. Escape closes the chapter sheet and returns to its trigger. Native sliders support arrows, Home and End.</p><h2>License</h2><p><a href="./LICENSE.txt">Apache 2.0</a> source. <a href="./media/MEDIA-LICENSE.txt">Original CC0 footage, audio and VTT</a>. No accounts, backend, paid APIs, tracking or client data.</p></html>
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SIGHTLINE integration guide</title><style>body{max-width:780px;margin:50px auto;padding:0 24px;background:#eeefe5;color:#19221b;font:16px/1.7 system-ui}h1{letter-spacing:-.05em;font-size:42px;line-height:1.1}h2{font-size:24px;margin-top:36px}pre{padding:20px;overflow:auto;border:1px solid #aabc94;border-radius:12px;background:#e1e7d6;font-size:13px}a{color:inherit}a:focus-visible{outline:2px solid #385f1b;outline-offset:4px}</style><a href="./">← Working review preview</a><h1>Source you own.<br>Your sightline.</h1><p>SIGHTLINE is a native-video React skin for Video.js 10.3.0. It keeps one media instance across Watch and Practice. This review candidate has not replaced the existing Contra demo.</p><h2>Six source files</h2><p>Copy these paths, keeping their relative structure, into a directory such as <code>src/sightline/</code>. No unused Scaffold helpers or cn dependency are needed:</p><pre>src/index.ts
+src/player.ts
+src/video/skin.tsx
+src/video/skin.css
+src/video/icons.tsx
+src/video/use-practice-loop.ts</pre><p>Use an existing supported React 18 or 19 application with TypeScript. Keep your runtime; install the Video.js packages:</p><pre>npm install @videojs/react@10.3.0 @videojs/core@10.3.0</pre><h2>Compose a real video</h2><pre>import { I18nProvider } from '@videojs/react/i18n';
+import { Video } from '@videojs/react/video';
+import { SightlinePlayer, VideoSkin } from './sightline';
+
+export function Film() {
+  return (
+    &lt;I18nProvider locale="en"&gt;
+      &lt;SightlinePlayer&gt;
+        &lt;VideoSkin title="Your film" sourceKey="film-01"&gt;
+          &lt;Video src="/film.mp4" playsInline crossOrigin="anonymous"&gt;
+            &lt;track kind="chapters" src="/chapters.vtt" default /&gt;
+            &lt;track kind="captions" src="/captions.vtt"
+              srcLang="en" label="English" /&gt;
+          &lt;/Video&gt;
+        &lt;/VideoSkin&gt;
+      &lt;/SightlinePlayer&gt;
+    &lt;/I18nProvider&gt;
+  );
+}</pre><p>VTT tracks are optional. Serve WebVTT as <code>text/vtt</code>; cross-origin media/tracks need suitable CORS headers. Keep the player, skin and Video mounted during mode changes. When changing assets, update the video src and sourceKey.</p><h2>One accent. Your shape.</h2><pre>.my-player {
+  --media-accent-color: #bce2e9;
+  --media-accent-text-color: #172117;
+  --media-border-radius: 12px;
+  --media-font-family: system-ui, sans-serif;
+}</pre><p>Set <code>className="my-player"</code> on VideoSkin. Check accent/text contrast together. The skin uses container queries for compact players and supports forced colors and reduced motion.</p><h2>Practice contract</h2><p>A–B is supported for seekable, finite, on-demand native Video.js Video at least 0.25 seconds long. It is disabled for live, unknown duration, unavailable ranges and other media adapters. A/B shows fractional times and the range length. An active loop has a visible Stop loop control in Watch and Practice. Changing source or seeking outside the range clears the loop. Browser scheduling affects loop precision; this is not a frame-accurate editor.</p><h2>Keyboard</h2><p>Tab and Shift+Tab move between controls. Enter/Space activate buttons. Space/K plays; left/right seek five seconds; up/down adjust volume; M mutes; C toggles captions; F requests fullscreen. Escape closes chapters and returns to the chapter trigger. Native sliders retain their own keyboard controls.</p><h2>Test evidence</h2><p>See the review report for executed cases and NOT_RUN platforms. No WCAG certification, physical-device testing or cross-browser acceptance is implied by the CSS or this guide.</p><h2>Licenses</h2><p><a href="./LICENSE.txt">Apache 2.0</a> source; <a href="./media/practice/MEDIA-LICENSE.txt">original CC0 lesson, click audio and VTT</a>. No paid APIs, backend, accounts or client data.</p></html>

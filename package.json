@@ -12,7 +12,7 @@
     "deploy:vercel": "npx --yes vercel@64 build && npx --yes vercel@64 deploy --prebuilt",
     "deploy:netlify": "npx --yes netlify-cli@27 deploy --build",
     "deploy:cloudflare": "npm run build && npx --yes wrangler@4 pages deploy dist --project-name sightline",
-    "lint": "eslint src/player.ts src/video/skin.tsx src/video/icons.tsx apps/demo --max-warnings 0",
+    "lint": "eslint src/player.ts src/video/skin.tsx src/video/icons.tsx src/video/use-practice-loop.ts apps/demo --max-warnings 0",
     "build:workbench": "vite build --config vite.workbench.config.ts"
   },
   "dependencies": {

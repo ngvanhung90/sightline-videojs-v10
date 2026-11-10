@@ -1,0 +1,5 @@
+Original SIGHTLINE instructional media — CC0 1.0 Universal
+
+Procedural diagrams, synthesized click audio, posters and VTT text are dedicated to the public domain under CC0 1.0: https://creativecommons.org/publicdomain/zero/1.0/
+No third-party footage, music, image files or font files are distributed. Installed system sans-serif fonts are rasterized into the rendered instruction. No claim is made that the eight-tap sequence itself was invented or that a named musical technique is taught.
+The media is instructional content, never a mockup of player behavior.

@@ -1,54 +1,49 @@
-# SIGHTLINE — Never Cover the Moment
+# SIGHTLINE — Guide Deck review candidate
 
-*A player that gets out of the way when you watch, and helps you master what you see.*
+**AWAITING_OWNER_DESIGN_AND_RELEASE_APPROVAL.** This isolated branch does not authorize a Contra edit, social post, duplicate entry, public-repository main update or replacement of the existing demo.
 
-SIGHTLINE is a source-owned Video.js v10 skin for React and TypeScript. Its controls sit below the picture. Watch mode keeps the essentials close; Practice adds chapters, direct speed choices, and an A–B loop on the same media instance.
+SIGHTLINE keeps the picture clear and provides a deliberate practice layer: two time-correlated rails, named VTT chapters, direct rates and exact A–B intervals. Watch and Practice share one Video.js v10 native Video instance. An active loop has a visible stop action in either mode.
 
-Two guide rails give the skin its identity: one shows playback progress, and the second marks chapters and the practice range. Both have a job. No backend, accounts, analytics service, or paid API is required.
+## Protected baseline
 
-- [Repository](https://github.com/ngvanhung90/sightline-videojs-v10) — public source; clean-clone checks passed.
-- [Live demo](https://sightline-player.ng-van-hung90.chatgpt.site) — public playback verified without a sign-in gate.
-- [Received Contra Challenge entry](https://contra.com/community/UTpczOTl-sightline-video-player-with-practice-controls) — official Submit entry confirmation retained in [the receipt](docs/SUBMISSION-RECEIPT.json).
-- [Design and submission notes](docs/CONTRA-SUBMISSION.md)
-- [Media sources and licenses](docs/MEDIA-SOURCES.md)
+- Existing entry: https://contra.com/community/UTpczOTl-sightline-video-player-with-practice-controls
+- Existing public demo: https://sightline-player.ng-van-hung90.chatgpt.site
+- Existing source: https://github.com/ngvanhung90/sightline-videojs-v10
+- Baseline code 59df9092687fa8c808937e89a23f1d23b1b07a8b; receipt documentation 455b8e0125cafc43bfe8d1e8ae50f55187b0b6de.
 
-## Verified scope
+A fresh account audit found a social-completion gate: the saved entry is currently marked incomplete until its social-post URL is supplied. The earlier receipt proves a saved post, not final eligibility. The Owner-authorized support email asks Contra to confirm completion, editing and judging-version rules. No social completion or existing entry edit has been performed by this rescue branch.
 
-Real Chrome checks exercised native playback, seek, volume/mute, fullscreen, captions, VTT chapters, mode preservation, direct rates, A–B repetition/reset, 320/360/768/1280px layouts, keyboard focus/Escape, forced colors, reduced motion and brand tokens. The selected-label contrast defect was fixed and visually retested; final VTT cue boundaries were verified without overlapping active captions. Touch was trusted Chrome emulation; a local live MediaStream and an invalid source tested loop guards.
+## Run the isolated candidate
 
-Typecheck, lint, standalone and workbench builds passed. The public repository was independently cloned, installed with `npm ci`, typechecked, linted and built. Public page/media/VTT requests with no Cookie or Authorization succeeded, and native Chrome playback on production advanced. See [the scoped QA matrix](docs/QA-MATRIX.json). Safari, Firefox, physical handset and screen-reader testing have not run; no WCAG certification is claimed.
-
-[Watch the 79-second walkthrough](https://sightline-player.ng-van-hung90.chatgpt.site/sightline-demo.mp4). This is an edited, silent recording of actual Chrome local/production operation at original timing; capture sampling varies. It demonstrates the product, and does not replace the QA evidence. Some earlier RC footage precedes the final caption cue-gap patch.
-
-## Run locally
-
-Use Node.js 24 LTS and npm. The lockfile is the reproducible dependency baseline. Video.js packages are pinned to **10.3.0**, with React and React DOM **19.3.1**.
+Node 24 LTS, npm and the committed lockfile are the reproducible baseline.
 
 ```sh
-git clone https://github.com/ngvanhung90/sightline-videojs-v10.git
-cd sightline-videojs-v10
 npm ci
 npm run dev
-```
-
-Open the URL printed by Vite, normally `http://127.0.0.1:5173`. The demonstration assets belong in `apps/demo/public/media/`; the media guide describes regeneration.
-
-```sh
 npm run typecheck
 npm run lint
 npm run build
-npm run preview
+npm run build:workbench
 ```
 
-The main build is the standalone SIGHTLINE demonstration. The original CLI workbench is retained in `apps/preview/`; `npm run build:workbench` builds it separately with its additional preview settings. Third-party deployment scripts may request host sign-in; local development needs no hosting account.
+The local candidate uses port 5174. Preview target (Owner-only, separate Site): https://sightline-owner-review.ng-van-hung90.chatgpt.site . Publication and runtime verification are reported separately in the Owner review package.
 
-## Add SIGHTLINE to your app
+For the controlled Owner workstation, package/build/media/clone operations must use its reviewed storage producer; do not bypass host admission with the commands above. Ordinary consumers run these commands on their own host.
 
-This repository distributes source rather than an npm skin package. Copy the complete `src/` directory into your React application, for example as `src/sightline/`. Public exports are in `src/index.ts`; the skin imports its own stylesheet. The retained scaffold helpers also need `cn@0.4.0` when copying the full source tree.
+## Integrate only six files
 
-```sh
-npm install @videojs/react@10.3.0 @videojs/core@10.3.0 react@19.3.1 react-dom@19.3.1 cn@0.4.0
+Copy these paths into your application's `src/sightline/`, preserving the relative structure:
+
+```text
+index.ts
+player.ts
+video/skin.tsx
+video/skin.css
+video/icons.tsx
+video/use-practice-loop.ts
 ```
+
+Install `@videojs/react@10.3.0` and `@videojs/core@10.3.0` into an existing supported React 18 or 19 app. Keep the app's React runtime; the minimal skin needs no cn or scaffold helpers.
 
 ```tsx
 import { I18nProvider } from '@videojs/react/i18n';
@@ -59,11 +54,10 @@ export function Film() {
   return (
     <I18nProvider locale="en">
       <SightlinePlayer>
-        <VideoSkin title="A closer look" sourceKey="film-01">
+        <VideoSkin title="Your film" sourceKey="film-01">
           <Video src="/film.mp4" playsInline crossOrigin="anonymous">
             <track kind="chapters" src="/chapters.vtt" default />
-            <track kind="captions" src="/captions-en.vtt"
-              srcLang="en" label="English" />
+            <track kind="captions" src="/captions.vtt" srcLang="en" label="English" />
           </Video>
         </VideoSkin>
       </SightlinePlayer>
@@ -72,67 +66,24 @@ export function Film() {
 }
 ```
 
-Tracks are optional. Serve valid WebVTT as `text/vtt`; cross-origin video and tracks require suitable CORS headers. A video without chapters or captions retains essential playback controls, and the chapter panel explains how to create a practice range.
+Tracks are optional. WebVTT needs a valid MIME type and cross-origin assets need suitable CORS. Keep provider, skin and media mounted across mode changes; supply a fresh sourceKey when choosing another asset. This is client-side native-video support; other media adapters and SSR/Next hydration are not claimed.
 
-Keep the player, skin, and media mounted across mode changes. When selecting another asset, update `Video` and `sourceKey`; avoid a mode-dependent React `key` that remounts the media.
+Set `--media-accent-color`, `--media-accent-text-color`, `--media-border-radius` and `--media-font-family` on the skin. Choose accent/text colors together and test contrast.
 
-### Brand properties
+## Practice behavior
 
-Set these properties on `VideoSkin` through a class or an ancestor:
+Choose a chapter, set the real playback rate, then capture A and B from the current native time. B must be at least 0.25 seconds after A, within a currently seekable range. Point values include fractions, and the shared range readout shows duration and repeats. Reset/Stop loop is explicit and returns keyboard focus to the chapter trigger.
 
-```css
-.my-player {
-  --media-accent-color: #bce2e9;
-  --media-accent-text-color: #172117;
-  --media-border-radius: 12px;
-  --media-font-family: system-ui, sans-serif;
-}
-```
+A–B requires a finite, seekable, on-demand native Video at least 0.25 seconds long. Live, unknown duration and other adapters keep it disabled. Source/range changes invalidate pending returns. A resolved seek is checked against the intended source and actual position before counting. Automatic returns suppress only their seek announcements; manual playback/rate/volume changes retain Video.js announcements. Actual screen-reader behavior must be tested, not inferred from the DOM.
 
-Use `<VideoSkin className="my-player">`. Choose accent and text colors together, then check selected controls and focus contrast. Internal `--sl-*` properties in `src/video/skin.css` define surfaces and motion.
+## Original lesson and demonstration
 
-## Watch and Practice
+The new 40-second lesson teaches `L R L L R L R R` as a reproducible tabletop exercise, with original diagrams and synchronized synthesized clicks. Chapter 03 highlights the doubles. The 16–20 second bar is a useful repeat range. The sequence is not claimed as an invention or a certified teaching method. No learning-speed or click-count improvement is claimed without measurement.
 
-Watch has play/pause, seek, time, volume/mute, captions, and fullscreen through real Video.js React primitives. Picture and controls share the fullscreen container while occupying separate layout regions.
+The generator is `scripts/generate_lesson.py`. The original render, intermediate WAV/silent videos and provenance are retained separately; only published assets are staged in `apps/demo/public/media/practice`. Source is Apache 2.0; original footage/diagrams/audio/VTT are CC0. No external media/font files, paid APIs, analytics, backend or user accounts are added.
 
-Practice uses the same media. VTT chapters seek to their exact start times. Speed choices are `0.75×`, `1×`, `1.25×`, `1.5×`, and `2×`. Switching modes does not request a media reload or change the playback rate or subtitle selection.
+## Verification and approval
 
-1. Seek to a detail and choose **Set A**.
-2. Play forward and choose **Set B**, more than 0.25 seconds after A.
-3. The second rail shows the range; playback returns to A at B.
-4. Choose **Reset loop** to restore the full video.
+Development checks are distinct from final locked-commit QA. The Owner package records browser/hardware/assistive-technology results individually, including NOT_RUN. No WCAG certification is claimed. The final recording must use only the locked rescue commit at native 1920×1080; old RC captures must not be mixed into it.
 
-Choosing a chapter, seeking outside the range, or changing source clears the loop. Setting A again clears the old B. Loop controls require a finite, on-demand source and are disabled for live or unknown-duration video. Browser scheduling affects loop precision; this is a practice aid rather than a frame-accurate editor.
-
-## Keyboard and accessibility
-
-The implementation includes labels, visible focus, status announcements, reduced-motion CSS, and forced-color styling. Controls follow DOM order. Narrow players use a compact chapter panel below the picture and a mute control in place of the volume slider.
-
-| Key | Action within the player |
-| --- | --- |
-| Tab / Shift+Tab | Move between controls |
-| Enter / Space on a button | Activate the focused control |
-| Space or K | Toggle playback |
-| Left / Right | Seek five seconds |
-| Up / Down | Adjust volume |
-| M | Toggle mute |
-| C | Toggle captions |
-| F | Toggle fullscreen |
-| Escape | Close chapters and return focus to the trigger |
-
-Sliders also retain native keyboard behavior when focused. Fullscreen and volume availability depend on the browser/device. Implementation intent is not a test result or a conformance certification.
-
-## Verification status
-
-The Owner matrix is Q01–Q22. Executed checks have retained evidence; local synthetic and touch-emulation scopes are identified. Contra confirmed receipt through the official Challenge submission flow; see the separate submission receipt. This is not an award or judging outcome. Four actual interface captures are in `docs/assets/`; detailed native-state evidence is retained with the Owner deliverables.
-
-## Source map and license
-
-- `src/index.ts`: public exports.
-- `src/player.ts`: typed video player with stream-type feature.
-- `src/video/skin.tsx` and `skin.css`: interface, practice behavior, tokens, and responsive styles.
-- `apps/demo/`: standalone demo; `apps/preview/`: retained CLI workbench.
-- `scripts/generate_media.py`: original film and synthesized audio generator.
-- `skin.json`: official CLI scaffold provenance.
-
-Source is licensed under [Apache 2.0](LICENSE). Original generated footage, audio, posters, and VTT text use CC0 1.0; see [provenance](docs/MEDIA-SOURCES.md). Preserve upstream notices. SIGHTLINE began with the official Video.js 10.3.0 React/CSS Scaffold and uses the new `@videojs/*` architecture, without the legacy v8 initializer or plugin API. This independent entry claims no official selection or endorsement.
+The final review package includes actual before/after captures, video, independent comparison and scoring, QA evidence, rule-update status and remaining pre-deadline actions. Existing live content and the saved Contra entry remain unchanged until explicit Owner design and release approval.

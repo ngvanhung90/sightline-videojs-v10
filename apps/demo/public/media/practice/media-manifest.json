@@ -1,0 +1,617 @@
+{
+  "title": "Catch the double \u2014 an eight-tap study",
+  "generated_at_utc": "2026-11-10T19:11:02.603099+00:00",
+  "license": "CC0-1.0",
+  "source_license": "Apache-2.0",
+  "source_sha256": "e508ca784461fe9172611b9b273e126fa94d507f6b649d16ba601d14ddbe9e5b",
+  "duration_seconds": 40,
+  "pattern": [
+    "L",
+    "R",
+    "L",
+    "L",
+    "R",
+    "L",
+    "R",
+    "R"
+  ],
+  "fps": 30,
+  "landscape": {
+    "width": 1920,
+    "height": 1080
+  },
+  "portrait": {
+    "width": 432,
+    "height": 768
+  },
+  "content": "Original learnable hand-tap diagram, not player controls or a playback mockup.",
+  "claim_limit": "No claim of inventing the tap sequence, musical pedagogy certification, or measured learning benefit.",
+  "cue_timing": "Intended click/visual events share timestamps. Actual encoded playback still needs independent QA.",
+  "caption_gap_seconds": 0.05,
+  "audio": {
+    "sample_rate": 48000,
+    "channels": 2,
+    "peak_linear": 0.46294501423835754,
+    "audio": "Original synthesized clicks; left540Hz, right820Hz, neutral330Hz. No music.",
+    "event_times": [
+      {
+        "time": 0.25,
+        "section": 0,
+        "beat": 0,
+        "kind": "count-in",
+        "hand": null
+      },
+      {
+        "time": 0.75,
+        "section": 0,
+        "beat": 1,
+        "kind": "count-in",
+        "hand": null
+      },
+      {
+        "time": 1.25,
+        "section": 0,
+        "beat": 2,
+        "kind": "count-in",
+        "hand": null
+      },
+      {
+        "time": 1.75,
+        "section": 0,
+        "beat": 3,
+        "kind": "count-in",
+        "hand": null
+      },
+      {
+        "time": 2.25,
+        "section": 0,
+        "beat": 0,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 2.75,
+        "section": 0,
+        "beat": 1,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 3.25,
+        "section": 0,
+        "beat": 2,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 3.75,
+        "section": 0,
+        "beat": 3,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 4.25,
+        "section": 0,
+        "beat": 4,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 4.75,
+        "section": 0,
+        "beat": 5,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 5.25,
+        "section": 0,
+        "beat": 6,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 5.75,
+        "section": 0,
+        "beat": 7,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 8.25,
+        "section": 1,
+        "beat": 0,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 8.75,
+        "section": 1,
+        "beat": 1,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 9.25,
+        "section": 1,
+        "beat": 2,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 9.75,
+        "section": 1,
+        "beat": 3,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 10.25,
+        "section": 1,
+        "beat": 4,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 10.75,
+        "section": 1,
+        "beat": 5,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 11.25,
+        "section": 1,
+        "beat": 6,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 11.75,
+        "section": 1,
+        "beat": 7,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 12.25,
+        "section": 1,
+        "beat": 0,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 12.75,
+        "section": 1,
+        "beat": 1,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 13.25,
+        "section": 1,
+        "beat": 2,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 13.75,
+        "section": 1,
+        "beat": 3,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 14.25,
+        "section": 1,
+        "beat": 4,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 14.75,
+        "section": 1,
+        "beat": 5,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 15.25,
+        "section": 1,
+        "beat": 6,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 15.75,
+        "section": 1,
+        "beat": 7,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 16.25,
+        "section": 2,
+        "beat": 0,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 16.75,
+        "section": 2,
+        "beat": 1,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 17.25,
+        "section": 2,
+        "beat": 2,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 17.75,
+        "section": 2,
+        "beat": 3,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 18.25,
+        "section": 2,
+        "beat": 4,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 18.75,
+        "section": 2,
+        "beat": 5,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 19.25,
+        "section": 2,
+        "beat": 6,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 19.75,
+        "section": 2,
+        "beat": 7,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 20.25,
+        "section": 2,
+        "beat": 0,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 20.75,
+        "section": 2,
+        "beat": 1,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 21.25,
+        "section": 2,
+        "beat": 2,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 21.75,
+        "section": 2,
+        "beat": 3,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 22.25,
+        "section": 2,
+        "beat": 4,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 22.75,
+        "section": 2,
+        "beat": 5,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 23.25,
+        "section": 2,
+        "beat": 6,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 23.75,
+        "section": 2,
+        "beat": 7,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 24.25,
+        "section": 3,
+        "beat": 0,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 24.75,
+        "section": 3,
+        "beat": 1,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 25.25,
+        "section": 3,
+        "beat": 2,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 25.75,
+        "section": 3,
+        "beat": 3,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 26.25,
+        "section": 3,
+        "beat": 4,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 26.75,
+        "section": 3,
+        "beat": 5,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 27.25,
+        "section": 3,
+        "beat": 6,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 27.75,
+        "section": 3,
+        "beat": 7,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 28.25,
+        "section": 3,
+        "beat": 0,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 28.75,
+        "section": 3,
+        "beat": 1,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 29.25,
+        "section": 3,
+        "beat": 2,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 29.75,
+        "section": 3,
+        "beat": 3,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 30.25,
+        "section": 3,
+        "beat": 4,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 30.75,
+        "section": 3,
+        "beat": 5,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 31.25,
+        "section": 3,
+        "beat": 6,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 31.75,
+        "section": 3,
+        "beat": 7,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 32.25,
+        "section": 4,
+        "beat": 0,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 32.75,
+        "section": 4,
+        "beat": 1,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 33.25,
+        "section": 4,
+        "beat": 2,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 33.75,
+        "section": 4,
+        "beat": 3,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 34.25,
+        "section": 4,
+        "beat": 4,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 34.75,
+        "section": 4,
+        "beat": 5,
+        "kind": "tap",
+        "hand": "L"
+      },
+      {
+        "time": 35.25,
+        "section": 4,
+        "beat": 6,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 35.75,
+        "section": 4,
+        "beat": 7,
+        "kind": "tap",
+        "hand": "R"
+      },
+      {
+        "time": 36.25,
+        "section": 4,
+        "beat": 0,
+        "kind": "memory-tick",
+        "hand": null
+      },
+      {
+        "time": 36.75,
+        "section": 4,
+        "beat": 1,
+        "kind": "memory-tick",
+        "hand": null
+      },
+      {
+        "time": 37.25,
+        "section": 4,
+        "beat": 2,
+        "kind": "memory-tick",
+        "hand": null
+      },
+      {
+        "time": 37.75,
+        "section": 4,
+        "beat": 3,
+        "kind": "memory-tick",
+        "hand": null
+      },
+      {
+        "time": 38.25,
+        "section": 4,
+        "beat": 4,
+        "kind": "memory-tick",
+        "hand": null
+      },
+      {
+        "time": 38.75,
+        "section": 4,
+        "beat": 5,
+        "kind": "memory-tick",
+        "hand": null
+      },
+      {
+        "time": 39.25,
+        "section": 4,
+        "beat": 6,
+        "kind": "memory-tick",
+        "hand": null
+      },
+      {
+        "time": 39.75,
+        "section": 4,
+        "beat": 7,
+        "kind": "memory-tick",
+        "hand": null
+      }
+    ]
+  },
+  "files": [
+    {
+      "file": "eight-tap.mp4",
+      "bytes": 1676129,
+      "sha256": "4f3024c8d4a002a29736b7e74abb70fd8cd369df1c201a96f7a3778a5cf76872"
+    },
+    {
+      "file": "eight-tap-portrait.mp4",
+      "bytes": 1034448,
+      "sha256": "b5afc8b12a40fad534b7e5614133387ea4f2c696c0482f4dac2e1d897771514c"
+    },
+    {
+      "file": "poster.jpg",
+      "bytes": 133047,
+      "sha256": "8ea73a6df5b8d65a505d78ebc2d6c5e5967911283b4940a4d79346e070af5141"
+    },
+    {
+      "file": "portrait-poster.jpg",
+      "bytes": 46209,
+      "sha256": "46c63e19631e8cf713833547136de9ce387253ee1073b47e25fd30b1106416a2"
+    },
+    {
+      "file": "chapters.vtt",
+      "bytes": 260,
+      "sha256": "6c60b32a75a5f4922e7ca704079035b8f4d4c733bd6b386b772681b0a3998cb9"
+    },
+    {
+      "file": "captions-en.vtt",
+      "bytes": 968,
+      "sha256": "ab09e32091b16da9bc3c9a796258f930e3c9cde9972d15fdc9d9f328ca4ec09b"
+    },
+    {
+      "file": "MEDIA-LICENSE.txt",
+      "bytes": 570,
+      "sha256": "8b538ec506e99fd1f5ef43d238e63e223cb53c9839e59475a0253bf50d37537f"
+    }
+  ],
+  "retained_intermediates": [
+    "clicks.wav",
+    "eight-tap-silent.mp4",
+    "eight-tap-portrait-silent.mp4",
+    "eight-tap-silent.encode.log",
+    "eight-tap-portrait-silent.encode.log",
+    "eight-tap.mux.log",
+    "eight-tap-portrait.mux.log"
+  ]
+}
