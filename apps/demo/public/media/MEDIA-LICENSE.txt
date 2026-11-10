@@ -1,0 +1,11 @@
+SIGHTLINE — The Fold
+
+Original procedural artwork, animation, chapter text, and caption text created for SIGHTLINE.
+No external footage, photographs, audio recordings, stock images, or AI models were used.
+Landscape and portrait audio is original mathematical synthesis: sustained sine harmonics with fades, no song or samples.
+Generated media and VTT text: CC0 1.0 Universal (public-domain dedication).
+https://creativecommons.org/publicdomain/zero/1.0/
+Generator source: Apache License, Version 2.0.
+Installed system fonts are rasterized into frames; no font files are distributed.
+The footage demonstrates real motion, not player behavior. Bright/dark/short diagnostic clips are silent.
+Silent video and PCM WAV intermediates are deliberately retained; no automatic deletion occurs.

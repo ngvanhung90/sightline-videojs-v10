@@ -1,0 +1,211 @@
+[
+  {
+    "id": "Q01",
+    "test": "CLI scaffold, build, typecheck, v10 APIs",
+    "status": "NOT_RUN",
+    "evidence": [
+      "scaffold-first.json",
+      "delivery-verify-rc1.json",
+      "verify-rc1.log"
+    ],
+    "note": "CLI scaffold, multiple RC build/typecheck/lint and workbench builds passed. Final forced-color/VTT patch has not been built due own orphan lease HOLD."
+  },
+  {
+    "id": "Q02",
+    "test": "Play pause seek volume",
+    "status": "PASS",
+    "evidence": [
+      "transport-state.json",
+      "native-volume.json",
+      "pointer-mute.json",
+      "fullscreen.json"
+    ],
+    "note": "Real Chrome execution, local demo. Observed and retained evidence."
+  },
+  {
+    "id": "Q03",
+    "test": "Watch Practice keeps time rate captions",
+    "status": "PASS",
+    "evidence": [
+      "mode-preservation.json"
+    ],
+    "note": "Real Chrome execution, local demo. Observed and retained evidence."
+  },
+  {
+    "id": "Q04",
+    "test": "VTT chapters and precise seek",
+    "status": "PASS",
+    "evidence": [
+      "chapter-seek.json"
+    ],
+    "note": "Real Chrome execution, local demo. Observed and retained evidence."
+  },
+  {
+    "id": "Q05",
+    "test": "No-chapters playback",
+    "status": "NOT_RUN",
+    "evidence": [],
+    "note": "No-track native state was observed; public no-track playback will be rechecked."
+  },
+  {
+    "id": "Q06",
+    "test": "Real A-B loop",
+    "status": "PASS",
+    "evidence": [
+      "final-recorded-loop.json",
+      "end-boundary-loop-and-source-reset.json"
+    ],
+    "note": "Real Chrome execution, local demo. Observed and retained evidence."
+  },
+  {
+    "id": "Q07",
+    "test": "Invalid ranges live unknown guard",
+    "status": "PASS",
+    "evidence": [
+      "live-mediastream-guard.json",
+      "error-unknown-guard.json"
+    ],
+    "note": "Invalid equal A/B was rejected in UI. Live uses a real local canvas MediaStream (Infinity); broken source uses native NaN. Remote HLS/DVR not tested."
+  },
+  {
+    "id": "Q08",
+    "test": "Reset and source-change loop cleanup",
+    "status": "PASS",
+    "evidence": [
+      "end-boundary-loop-and-source-reset.json"
+    ],
+    "note": "Real Chrome execution, local demo. Observed and retained evidence."
+  },
+  {
+    "id": "Q09",
+    "test": "Native playbackRate",
+    "status": "PASS",
+    "evidence": [
+      "rates-captions-keyboard-observations.json",
+      "final-mobile-playback.json"
+    ],
+    "note": "Real Chrome execution, local demo. Observed and retained evidence."
+  },
+  {
+    "id": "Q10",
+    "test": "Captions on off readable unoccluded",
+    "status": "NOT_RUN",
+    "evidence": [
+      "rates-captions-keyboard-observations.json",
+      "responsive-with-tracks.json",
+      "mobile-watch.jpg"
+    ],
+    "note": "Prior caption toggle/unoccluded layout passed. Added 50ms cue gaps after independent review of adjacent-boundary duplication; final VTT/browser recheck pending."
+  },
+  {
+    "id": "Q11",
+    "test": "Responsive 320 360 768 1280",
+    "status": "PASS",
+    "evidence": [
+      "responsive-with-tracks.json"
+    ],
+    "note": "Real Chrome execution, local demo. Observed and retained evidence."
+  },
+  {
+    "id": "Q12",
+    "test": "16:9 9:16 short media",
+    "status": "PASS",
+    "evidence": [
+      "final-mobile-playback.json",
+      "ended-state.json",
+      "mode-preservation.json"
+    ],
+    "note": "Real Chrome execution, local demo. Observed and retained evidence."
+  },
+  {
+    "id": "Q13",
+    "test": "Keyboard Tab Enter Space Arrow Escape",
+    "status": "PASS",
+    "evidence": [
+      "rates-captions-keyboard-observations.json",
+      "bright-focus.jpg"
+    ],
+    "note": "Tab, Enter, Space, slider arrows and Escape observed; visible outline and return to chapter trigger. Screen-reader audit NOT_RUN."
+  },
+  {
+    "id": "Q14",
+    "test": "Touch interactions",
+    "status": "PASS",
+    "evidence": [
+      "touch-emulation.json",
+      "touch-chapter-seek.json",
+      "final-mobile-playback.json"
+    ],
+    "note": "Trusted Chrome touch protocol, pointerType=touch, isTrusted=true. Physical handset hardware NOT_RUN."
+  },
+  {
+    "id": "Q15",
+    "test": "Bright dark contrast",
+    "status": "PASS",
+    "evidence": [
+      "bright-focus.jpg",
+      "dark-watch.jpg"
+    ],
+    "note": "Real Chrome execution, local demo. Observed and retained evidence."
+  },
+  {
+    "id": "Q16",
+    "test": "Forced colors reduced motion",
+    "status": "FAIL",
+    "evidence": [
+      "preferences-branding.json",
+      "forced-colors-reduced-motion.jpg"
+    ],
+    "note": "Independent visual review found selected Watch label white-on-white in forced colors. Source fix pairs explicit Highlight/HighlightText with forced-color-adjust:none. Rebuild and real-browser retest pending storage recovery."
+  },
+  {
+    "id": "Q17",
+    "test": "Broken source/network error",
+    "status": "PASS",
+    "evidence": [
+      "error-unknown-guard.json",
+      "error-state.jpg"
+    ],
+    "note": "Real Chrome execution, local demo. Observed and retained evidence."
+  },
+  {
+    "id": "Q18",
+    "test": "Loading waiting ended",
+    "status": "PASS",
+    "evidence": [
+      "waiting-state.json",
+      "ended-state.json"
+    ],
+    "note": "Real Chrome execution, local demo. Observed and retained evidence."
+  },
+  {
+    "id": "Q19",
+    "test": "Accent border radius tokens",
+    "status": "PASS",
+    "evidence": [
+      "preferences-branding.json"
+    ],
+    "note": "Real Chrome execution, local demo. Observed and retained evidence."
+  },
+  {
+    "id": "Q20",
+    "test": "Anonymous public demo",
+    "status": "NOT_RUN",
+    "evidence": [],
+    "note": "Public deployment and anonymous playback pending."
+  },
+  {
+    "id": "Q21",
+    "test": "README license clean install",
+    "status": "NOT_RUN",
+    "evidence": [],
+    "note": "README and Apache license prepared; real fresh Git clone/npm ci pending."
+  },
+  {
+    "id": "Q22",
+    "test": "Challenge joined and accepted submission",
+    "status": "NOT_RUN",
+    "evidence": [],
+    "note": "JOINED confirmed by Contra: You’ve joined the challenge. Final submission/receipt pending."
+  }
+]

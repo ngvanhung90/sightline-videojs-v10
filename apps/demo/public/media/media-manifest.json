@@ -1,0 +1,53 @@
+{
+  "title": "The Fold — a study in motion",
+  "generator": "scripts/generate_media.py",
+  "license": "CC0-1.0",
+  "audio": {
+    "landscape": true,
+    "portrait": true,
+    "source": "original sustained sine-harmonic synthesis",
+    "sample_rate": 48000,
+    "channels": 2,
+    "encoded_format": "AAC 128kbps",
+    "diagnostic_clips": false
+  },
+  "external_assets": [],
+  "retained_intermediates": [
+    "the-fold-silent.mp4",
+    "the-fold-ambient.wav",
+    "the-fold-portrait-silent.mp4",
+    "the-fold-portrait-ambient.wav"
+  ],
+  "files": [
+    {
+      "path": "the-fold.mp4",
+      "duration_seconds": 32,
+      "aspect_ratio": "16:9",
+      "bytes": 964052
+    },
+    {
+      "path": "the-fold-portrait.mp4",
+      "duration_seconds": 16,
+      "aspect_ratio": "9:16",
+      "bytes": 395033
+    },
+    {
+      "path": "bright.mp4",
+      "duration_seconds": 5,
+      "aspect_ratio": "16:9",
+      "bytes": 79791
+    },
+    {
+      "path": "dark.mp4",
+      "duration_seconds": 5,
+      "aspect_ratio": "16:9",
+      "bytes": 83098
+    },
+    {
+      "path": "short.mp4",
+      "duration_seconds": 3,
+      "aspect_ratio": "16:9",
+      "bytes": 78087
+    }
+  ]
+}
