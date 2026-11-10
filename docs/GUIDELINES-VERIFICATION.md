@@ -15,7 +15,6 @@ Verified prizes: total USD10,000, split 5,000 /3,000 /2,000. No separate Communi
 
 Unresolved: Vietnam individual eligibility, age/country limits, number of entries, further legal conditions. Public Guidelines do not state these. The final terms & conditions sentence is plain text without a link. Do not infer unlimited submissions or eligibility. No organizer message sent.
 
-Account state: Chrome displayed Sign Up/Log In; the Owner was asked to sign in directly. JOINED NOT_RUN. No acceptance checkbox or submission completed. The browser requires action-time confirmation before a legally binding agreement can be accepted; the concrete Join screen has not yet been reached.
+Account state: Owner signed in and explicitly confirmed acceptance at action time. Contra then displayed “You’ve joined the challenge” and “Make a submission”. JOINED=PASS; submission is still NOT_RUN. The authenticated form has description, media, Project URL, optional live-site URL/Mux playback ID/product feedback, and Submit entry. No country or submission-count terms were added in the inspected form.
 
-
-Account update: Owner signed in and explicitly confirmed acceptance at action time. Contra then displayed “You’ve joined the challenge” and “Make a submission”. JOINED=PASS; submission is still NOT_RUN. The authenticated form has description, media, Project URL, optional live-site URL/Mux playback ID/product feedback, and Submit entry. No country or submission-count terms were added in the inspected form.
+Independent confirmation: an official email from Contra, subject “Welcome to the Video.js Skins Design Challenge”, received 10 November 2026 at 14:13 UTC, confirms participation. This is a Join confirmation, not an accepted submission receipt. Its general “November 17” wording does not replace the Guidelines' precise deadline above.

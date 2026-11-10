@@ -6,14 +6,18 @@ SIGHTLINE is a source-owned Video.js v10 skin for React and TypeScript. Its cont
 
 Two guide rails give the skin its identity: one shows playback progress, and the second marks chapters and the practice range. Both have a job. No backend, accounts, analytics service, or paid API is required.
 
-- [Repository](https://github.com/ngvanhung90/sightline-videojs-v10) — publication and anonymous access verification pending.
-- [Demo target](https://sightline-player.ng-van-hung90.chatgpt.site) — deployment and anonymous playback verification pending.
+- [Repository](https://github.com/ngvanhung90/sightline-videojs-v10) — public source; clean-clone checks passed.
+- [Live demo](https://sightline-player.ng-van-hung90.chatgpt.site) — public playback verified without a sign-in gate.
 - [Contra submission draft](docs/CONTRA-SUBMISSION.md)
 - [Media sources and licenses](docs/MEDIA-SOURCES.md)
 
-## Verified scope so far
+## Verified scope
 
-Real Chrome checks have exercised native playback, seek, volume/mute, fullscreen, captions, chapters, mode preservation, direct rates, A–B repetition and reset, 320/360/768/1280px layouts, keyboard focus/Escape, forced colors and reduced motion. Touch was Chrome emulation, not physical handset certification. Local synthetic MediaStream and invalid-source fixtures tested loop guards. Build, typecheck, lint and the retained workbench build passed. A selected-label defect was found in forced colors and its source fix awaits rebuild/retest. Public anonymous playback and clean-clone validation are tracked separately in [the QA matrix](docs/QA-MATRIX.json). No Safari, Firefox, physical-device, or screen-reader certification is claimed.
+Real Chrome checks exercised native playback, seek, volume/mute, fullscreen, captions, VTT chapters, mode preservation, direct rates, A–B repetition/reset, 320/360/768/1280px layouts, keyboard focus/Escape, forced colors, reduced motion and brand tokens. The selected-label contrast defect was fixed and visually retested; final VTT cue boundaries were verified without overlapping active captions. Touch was trusted Chrome emulation; a local live MediaStream and an invalid source tested loop guards.
+
+Typecheck, lint, standalone and workbench builds passed. The public repository was independently cloned, installed with `npm ci`, typechecked, linted and built. Public page/media/VTT requests with no Cookie or Authorization succeeded, and native Chrome playback on production advanced. See [the scoped QA matrix](docs/QA-MATRIX.json). Safari, Firefox, physical handset and screen-reader testing have not run; no WCAG certification is claimed.
+
+[Watch the 79-second walkthrough](https://sightline-player.ng-van-hung90.chatgpt.site/sightline-demo.mp4). This is an edited, silent recording of actual Chrome local/production operation at original timing; capture sampling varies. It demonstrates the product, and does not replace the QA evidence. Some earlier RC footage precedes the final caption cue-gap patch.
 
 ## Run locally
 
@@ -39,10 +43,10 @@ The main build is the standalone SIGHTLINE demonstration. The original CLI workb
 
 ## Add SIGHTLINE to your app
 
-This repository distributes source rather than an npm skin package. Copy the complete `src/` directory into your React application, for example as `src/sightline/`. Public exports are in `src/index.ts`; the skin imports its own stylesheet.
+This repository distributes source rather than an npm skin package. Copy the complete `src/` directory into your React application, for example as `src/sightline/`. Public exports are in `src/index.ts`; the skin imports its own stylesheet. The retained scaffold helpers also need `cn@0.4.0` when copying the full source tree.
 
 ```sh
-npm install @videojs/react@10.3.0 @videojs/core@10.3.0 react@19.3.1 react-dom@19.3.1
+npm install @videojs/react@10.3.0 @videojs/core@10.3.0 react@19.3.1 react-dom@19.3.1 cn@0.4.0
 ```
 
 ```tsx
@@ -119,9 +123,7 @@ Sliders also retain native keyboard behavior when focused. Fullscreen and volume
 
 ## Verification status
 
-**Final verification is pending.** Earlier release-candidate build, typecheck, lint and local Chrome checks have retained evidence. The latest forced-color and caption-cue patch has not been rebuilt or retested; Q01 and Q10 are `NOT_RUN`, and Q16 remains `FAIL` until the observed defect is retested. Public access, clean-clone validation and accepted contest submission remain unverified. The Owner acceptance matrix is Q01–Q22; partial and synthetic checks are identified there.
-
-Before submission, capture actual build/typecheck/lint results, playback and loops, state preservation, VTT behavior, 320/360/768/1280px layouts, portrait/short media, keyboard/touch, loading/error/ended states, forced colors, reduced motion, brand customization, clean installation, and anonymous public access. Screenshots must show the running implementation. The completed recording and Contra acceptance receipt are separate evidence.
+The Owner matrix is Q01–Q22. Executed checks have retained evidence; local synthetic and touch-emulation scopes are identified. Accepted Contra submission is tracked separately and must only be claimed after the official Challenge confirms receipt. Four actual interface captures are in `docs/assets/`; detailed native-state evidence is retained with the Owner deliverables.
 
 ## Source map and license
 

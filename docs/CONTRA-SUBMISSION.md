@@ -1,6 +1,6 @@
 # SIGHTLINE — Never Cover the Moment
 
-**Submission draft.** Public deployment, captures, test evidence, participation, and acceptance require verification before submission. A profile post alone does not prove the Challenge received the entry.
+**Submission draft.** Public deployment, source, actual captures and scoped checks are verified. Contra acceptance remains pending; a profile post alone does not prove the Challenge received the entry.
 
 ## Entry fields
 
@@ -8,8 +8,8 @@
 | --- | --- |
 | Framework | React + TypeScript; Video.js v10.3.0 |
 | Source license | Apache License 2.0 |
-| Repository target | https://github.com/ngvanhung90/sightline-videojs-v10 — verification pending |
-| Demo target | https://sightline-player.ng-van-hung90.chatgpt.site — deployment and anonymous playback verification pending |
+| Repository target | https://github.com/ngvanhung90/sightline-videojs-v10 — public, clean-clone checks passed |
+| Demo target | https://sightline-player.ng-van-hung90.chatgpt.site — public playback and unauthenticated HTTP verified |
 | Mux bonus | Not claimed; no qualifying own-asset playback ID verified |
 | Live-site bonus | Not claimed until the real live site is verified and entered |
 | Accepted submission URL | Pending |
@@ -30,7 +30,7 @@ Video.js v10 makes this structure practical. The source-owned skin composes real
 
 ## Installation and customization
 
-Copy `src/` into a React application, install `@videojs/react@10.3.0` and `@videojs/core@10.3.0`, and import `SightlinePlayer` and `VideoSkin` from the copied directory's index. Place a Video.js `Video` inside the skin. VTT chapters and captions are optional.
+Copy `src/` into a React application, install `@videojs/react@10.3.0` `@videojs/core@10.3.0`, and `cn@0.4.0`, and import `SightlinePlayer` and `VideoSkin` from the copied directory's index. Place a Video.js `Video` inside the skin. VTT chapters and captions are optional.
 
 Brand properties are `--media-accent-color`, `--media-accent-text-color`, `--media-border-radius`, and `--media-font-family`. The repository README contains a complete integration example and local setup instructions.
 
@@ -38,11 +38,11 @@ Brand properties are `--media-accent-color`, `--media-accent-text-color`, `--med
 
 Real Chrome checks have exercised keyboard operation and focus return, native captions and fullscreen, chapter seeking, real A–B repetition, responsive player widths from 320 to 1280px, brand tokens, reduced motion and forced colors. Trusted touch events were emulated in Chrome; physical handset, screen-reader, Safari and Firefox testing have not run. This is scoped test evidence, not WCAG certification.
 
-A selected-label defect was found in forced colors; the source fix awaits rebuild and browser retest. Updated caption cue gaps also await final browser verification.
+The selected-label forced-colors defect was fixed and visually retested. Final caption cue boundaries were verified through native active cues without overlap.
 
-See QA-MATRIX.json for retained evidence and remaining public/clean-clone/submission checks. The final walkthrough is still being verified; do not attach an unqualified recording.
+See QA-MATRIX.json for retained evidence and remaining public/clean-clone/submission checks. The 78.9-second silent walkthrough uses actual Chrome captures at original timing; it is a product demonstration, separate from test evidence.
 
-## Attachments — actual captures pending
+## Attachments — actual interface captures
 
 | Attachment | Capture needed |
 | --- | --- |

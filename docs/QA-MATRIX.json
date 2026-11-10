@@ -2,13 +2,13 @@
   {
     "id": "Q01",
     "test": "CLI scaffold, build, typecheck, v10 APIs",
-    "status": "NOT_RUN",
+    "status": "PASS",
     "evidence": [
       "scaffold-first.json",
-      "delivery-verify-rc1.json",
-      "verify-rc1.log"
+      "delivery-verify-public2.json",
+      "verify-public2.log"
     ],
-    "note": "CLI scaffold, multiple RC build/typecheck/lint and workbench builds passed. Final forced-color/VTT patch has not been built due own orphan lease HOLD."
+    "note": "Official CLI10.3.0 scaffold. Final forced-colors/VTT source build, typecheck, lint, demo and retained workbench passed. Documentation/recording addition will be rebuilt before final publication."
   },
   {
     "id": "Q02",
@@ -43,9 +43,11 @@
   {
     "id": "Q05",
     "test": "No-chapters playback",
-    "status": "NOT_RUN",
-    "evidence": [],
-    "note": "No-track native state was observed; public no-track playback will be rechecked."
+    "status": "PASS",
+    "evidence": [
+      "public-bare-playback.json"
+    ],
+    "note": "Production Chrome without any track: time0.032881 to11.212669, pausedfalse, duration32, zero tracks."
   },
   {
     "id": "Q06",
@@ -89,13 +91,13 @@
   {
     "id": "Q10",
     "test": "Captions on off readable unoccluded",
-    "status": "NOT_RUN",
+    "status": "PASS",
     "evidence": [
-      "rates-captions-keyboard-observations.json",
-      "responsive-with-tracks.json",
-      "mobile-watch.jpg"
+      "captions-final-cue-boundaries.json",
+      "public-playback-keyboard.jpg",
+      "public-anonymous-http.json"
     ],
-    "note": "Prior caption toggle/unoccluded layout passed. Added 50ms cue gaps after independent review of adjacent-boundary duplication; final VTT/browser recheck pending."
+    "note": "Final50ms gap VTT exercised through native activeCues at3.94/3.98/4/4.02/7.98/8/8.02: zero overlapping captions. Native toggle and unoccluded responsive layout retained. Production VTT served text/vtt."
   },
   {
     "id": "Q11",
@@ -151,12 +153,13 @@
   {
     "id": "Q16",
     "test": "Forced colors reduced motion",
-    "status": "FAIL",
+    "status": "PASS",
     "evidence": [
-      "preferences-branding.json",
-      "forced-colors-reduced-motion.jpg"
+      "forced-colors-fixed.json",
+      "forced-colors-fixed.jpg",
+      "forced-colors-practice-fixed.jpg"
     ],
-    "note": "Independent visual review found selected Watch label white-on-white in forced colors. Source fix pairs explicit Highlight/HighlightText with forced-color-adjust:none. Rebuild and real-browser retest pending storage recovery."
+    "note": "Real Chrome final source patch: selected Watch/Practice/rate use white HighlightText on purple Highlight; visual review confirmed legibility. Reduced motion0ms. Chrome emulation, not all OS contrast themes."
   },
   {
     "id": "Q17",
@@ -190,16 +193,23 @@
   {
     "id": "Q20",
     "test": "Anonymous public demo",
-    "status": "NOT_RUN",
-    "evidence": [],
-    "note": "Public deployment and anonymous playback pending."
+    "status": "PASS",
+    "evidence": [
+      "public-anonymous-http.json",
+      "public-bare-playback.json",
+      "public-playback-keyboard.jpg"
+    ],
+    "note": "Public Site succeeded; no Cookie/Authorization HTTP200 for page/video/VTT/license/guide. Real Chrome production native playback advances. No login prompt."
   },
   {
     "id": "Q21",
     "test": "README license clean install",
-    "status": "NOT_RUN",
-    "evidence": [],
-    "note": "README and Apache license prepared; real fresh Git clone/npm ci pending."
+    "status": "PASS",
+    "evidence": [
+      "delivery-clean-clone-public2.json",
+      "clean-clone-public2.log"
+    ],
+    "note": "Public GitHub clean clone ofea68743a98a564af3832dae4a39b5d1d92499678: npm ci/typecheck/lint/build exit0. Full-src integration cn dependency wording corrected afterward; final docs publication pending."
   },
   {
     "id": "Q22",
