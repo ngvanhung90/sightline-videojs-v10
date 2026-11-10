@@ -8,7 +8,8 @@ Two guide rails give the skin its identity: one shows playback progress, and the
 
 - [Repository](https://github.com/ngvanhung90/sightline-videojs-v10) — public source; clean-clone checks passed.
 - [Live demo](https://sightline-player.ng-van-hung90.chatgpt.site) — public playback verified without a sign-in gate.
-- [Contra submission draft](docs/CONTRA-SUBMISSION.md)
+- [Received Contra Challenge entry](https://contra.com/community/UTpczOTl-sightline-video-player-with-practice-controls) — official Submit entry confirmation retained in [the receipt](docs/SUBMISSION-RECEIPT.json).
+- [Design and submission notes](docs/CONTRA-SUBMISSION.md)
 - [Media sources and licenses](docs/MEDIA-SOURCES.md)
 
 ## Verified scope
@@ -123,7 +124,7 @@ Sliders also retain native keyboard behavior when focused. Fullscreen and volume
 
 ## Verification status
 
-The Owner matrix is Q01–Q22. Executed checks have retained evidence; local synthetic and touch-emulation scopes are identified. Accepted Contra submission is tracked separately and must only be claimed after the official Challenge confirms receipt. Four actual interface captures are in `docs/assets/`; detailed native-state evidence is retained with the Owner deliverables.
+The Owner matrix is Q01–Q22. Executed checks have retained evidence; local synthetic and touch-emulation scopes are identified. Contra confirmed receipt through the official Challenge submission flow; see the separate submission receipt. This is not an award or judging outcome. Four actual interface captures are in `docs/assets/`; detailed native-state evidence is retained with the Owner deliverables.
 
 ## Source map and license
 

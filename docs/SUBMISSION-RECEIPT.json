@@ -1,0 +1,30 @@
+{
+  "project": "SIGHTLINE",
+  "challenge_url": "https://contra.com/community/topic/videojsskinschallenge",
+  "entry_url": "https://contra.com/community/UTpczOTl-sightline-video-player-with-practice-controls",
+  "observed_confirmation": [
+    "Entry Submitted",
+    "Your entry has been submitted"
+  ],
+  "submitted_through": "Official Make a submission / Submit entry challenge form",
+  "verified_at_utc": "2026-11-10T17:43:24Z",
+  "verified_at_vietnam": "2026-11-11T00:43:24+07:00",
+  "attachments": {
+    "images": 3,
+    "video": 1,
+    "note": "Contra permits4files at a time. All4preparedscreenshots are in repository docs/assets."
+  },
+  "public_entry_http": 200,
+  "demo": "https://sightline-player.ng-van-hung90.chatgpt.site",
+  "repository": "https://github.com/ngvanhung90/sightline-videojs-v10",
+  "video_duration_seconds": 78.89800010299683,
+  "video_sha256": "335636924ba1868def84a822589bdccc9f4e7eac639be03114900a02985d40a5",
+  "evidence": [
+    "contra-entry-submitted.txt",
+    "contra-entry-submitted.jpg",
+    "contra-accepted-post.txt",
+    "contra-accepted-post.jpg",
+    "public-repo-entry-http.json"
+  ],
+  "scope": "Challenge submission received. No claim of judging eligibility, award, official catalog selection or endorsement."
+}

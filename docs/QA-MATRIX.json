@@ -5,10 +5,10 @@
     "status": "PASS",
     "evidence": [
       "scaffold-first.json",
-      "delivery-verify-public2.json",
-      "verify-public2.log"
+      "delivery-verify-final1.json",
+      "verify-final1.log"
     ],
-    "note": "Official CLI10.3.0 scaffold. Final forced-colors/VTT source build, typecheck, lint, demo and retained workbench passed. Documentation/recording addition will be rebuilt before final publication."
+    "note": "Official CLI10.3.0 scaffold, final typecheck/lint/demo/workbench builds exit0. Uses @videojs v10 packages and source-owned primitives, no v8 initializer."
   },
   {
     "id": "Q02",
@@ -206,16 +206,23 @@
     "test": "README license clean install",
     "status": "PASS",
     "evidence": [
-      "delivery-clean-clone-public2.json",
-      "clean-clone-public2.log"
+      "delivery-clean-clone-final1.json",
+      "clean-clone-final1.log"
     ],
-    "note": "Public GitHub clean clone ofea68743a98a564af3832dae4a39b5d1d92499678: npm ci/typecheck/lint/build exit0. Full-src integration cn dependency wording corrected afterward; final docs publication pending."
+    "note": "Clean public GitHub clone commit59df9092687fa8c808937e89a23f1d23b1b07a8b; npm ci/typecheck/lint/build exit0. Apache2.0 LICENSE/NOTICE and original-media CC0 provenance present. Integration full-src instructions include cn0.4.0."
   },
   {
     "id": "Q22",
     "test": "Challenge joined and accepted submission",
-    "status": "NOT_RUN",
-    "evidence": [],
-    "note": "JOINED confirmed by Contra: You’ve joined the challenge. Final submission/receipt pending."
+    "status": "PASS",
+    "evidence": [
+      "contra-submission-receipt.json",
+      "contra-entry-submitted.txt",
+      "contra-entry-submitted.jpg",
+      "contra-accepted-post.txt",
+      "contra-accepted-post.jpg",
+      "public-repo-entry-http.json"
+    ],
+    "note": "Official challenge form Submit entry returned Entry Submitted / Your entry has been submitted. Accepted entry URL https://contra.com/community/UTpczOTl-sightline-video-player-with-practice-controls opened and unauthenticated HTTP200 verified. This is receipt, not judging/award acceptance."
   }
 ]

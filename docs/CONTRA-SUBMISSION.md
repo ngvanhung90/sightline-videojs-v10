@@ -1,6 +1,6 @@
 # SIGHTLINE — Never Cover the Moment
 
-**Submission draft.** Public deployment, source, actual captures and scoped checks are verified. Contra acceptance remains pending; a profile post alone does not prove the Challenge received the entry.
+**Submitted through the official Challenge form.** Contra returned “Entry Submitted” and “Your entry has been submitted”. See SUBMISSION-RECEIPT.json for the entry URL and evidence; no award or judging outcome is claimed.
 
 ## Entry fields
 
@@ -12,7 +12,7 @@
 | Demo target | https://sightline-player.ng-van-hung90.chatgpt.site — public playback and unauthenticated HTTP verified |
 | Mux bonus | Not claimed; no qualifying own-asset playback ID verified |
 | Live-site bonus | Not claimed until the real live site is verified and entered |
-| Accepted submission URL | Pending |
+| Accepted submission URL | https://contra.com/community/UTpczOTl-sightline-video-player-with-practice-controls |
 
 ## Short description
 
