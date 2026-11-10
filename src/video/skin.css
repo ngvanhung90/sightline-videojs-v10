@@ -135,7 +135,7 @@
 @keyframes sl-breathe { to { opacity: .35; transform: scaleX(.5); } }
 @media (hover: hover) and (pointer: fine) {
   .sightline button:enabled:hover { background: #ffffff10; }
-  .sightline .sl-play:hover, .sl-mode button[aria-pressed=true]:hover, .sl-rates button[aria-pressed=true]:hover { background: var(--sl-accent); filter: brightness(.95); }
+  .sightline button.sl-play:enabled:hover, .sl-mode button[aria-pressed=true]:hover, .sl-rates button[aria-pressed=true]:hover { background: var(--sl-accent); filter: brightness(.95); }
 }
 @container sightline (width < 900px) {
   .sl-practice-label { display: none; }
@@ -203,6 +203,7 @@
   .sl-track, .sl-guide-base, .sl-guide-segment { border: 1px solid CanvasText; }
   .sl-thumb, .sl-fill, .sl-loop-range { background: Highlight; forced-color-adjust: none; }
   .sightline .sl-mode button[aria-pressed=true], .sightline .sl-rates button[aria-pressed=true], .sightline .sl-play, .sightline .sl-point { forced-color-adjust: none; background: Highlight; color: HighlightText; border-color: Highlight; }
+  .sightline button.sl-play:enabled:hover { background: Highlight; color: HighlightText; filter: none; }
   .sl-chapters [aria-current=true] { outline: 2px solid Highlight; outline-offset: -3px; }
 }
 
