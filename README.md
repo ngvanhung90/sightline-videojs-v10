@@ -91,3 +91,5 @@ Code is Apache 2.0. The original lesson is CC0; the third-party calligraphy exce
 Development checks are distinct from final locked-commit QA. The Owner package records browser/hardware/assistive-technology results individually, including NOT_RUN. No WCAG certification is claimed. The final recording must use only the locked rescue commit at native 1920×1080; old RC captures must not be mixed into it.
 
 The final review package includes actual before/after captures, video, independent comparison and scoring, QA evidence, rule-update status and remaining pre-deadline actions. Existing live content and the saved Contra entry remain unchanged until explicit Owner design and release approval.
+
+The demo chooses the authored portrait lesson on an initial narrow viewport when no source is requested. Resizing does not silently switch a playing source. The selector always exposes the chosen media. Watch/Practice keep the same media instance.

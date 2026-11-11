@@ -189,3 +189,20 @@ footer > div { display: flex; gap: 18px; color: #526348; font-size: 10px; }
  .workshop-intro h1 { font-size: 32px; margin-top: 10px; }
  .workshop-intro p { font-size: 14px; margin-top: 12px; }
 }
+
+/* Final round: compact introduction; controls fit sooner on a laptop. */
+.hero { padding: 0 0 12px; }
+.hero .eyebrow, .hero-copy > span { display: none; }
+.hero h1 { font-size: clamp(26px,2.6vw,34px); }
+.hero-copy > p { font-size: 15px; margin: 0; }
+.demo-section .sl-screen video { max-height: 44svh; }
+@media(max-width:700px) {
+ .hero h1 { font-size: 25px; }
+ .hero-copy { padding-top: 5px; }
+ .hero-copy > p { font-size: 14px; }
+ .demo-section .sl-screen video { max-height: 58svh; }
+}
+
+@media(min-width:1100px) {
+ .player-only .sightline:not(:fullscreen) .sl-screen video { max-height: 44svh; }
+}

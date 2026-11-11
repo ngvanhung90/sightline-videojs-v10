@@ -370,3 +370,29 @@
   .sightline .sl-loop-summary button { color: ButtonText; background: ButtonFace; border-color: ButtonText; }
   .sl-feedback { color: CanvasText; }
 }
+
+/* Competitive round2: exact interval wins over chapter fill; separate A/B flags. */
+.sl-guide { margin-block: 22px; }
+.sl-guide[data-state=loop] .sl-guide-segment.is-current { background: #354337; color: #d9e0d1; box-shadow: none; }
+.sl-loop-range { background: repeating-linear-gradient(135deg, #171d1b 0 4px, color-mix(in srgb,var(--sl-accent) 32%,#171d1b) 4px 7px); }
+.sl-point { width: 22px; line-height: 20px; font-size: 13px; }
+.sl-point-a { top: -25px; }
+.sl-point-b { top: 26px; }
+.sl-point::after { content: ''; position: absolute; width: 1px; height: 8px; background: var(--sl-accent); }
+.sl-point-a::after { inset-inline-start: 0; top: 100%; }
+.sl-point-b::after { inset-inline-end: 0; bottom: 100%; }
+.sightline[data-mode=watch] .sl-guide:not([data-state=loop]) { height: 8px; margin-block: 14px; }
+.sightline[data-mode=watch] .sl-guide:not([data-state=loop]) .sl-guide-segment { height: 8px; }
+.sightline[data-mode=watch] .sl-guide:not([data-state=loop]) .sl-guide-index { display: none; }
+@media (forced-colors: active) {
+ .sl-guide[data-state=loop] .sl-guide-segment.is-current { background: Canvas; color: CanvasText; outline: none; box-shadow: none; }
+ .sl-loop-range { background: Canvas; border-color: Highlight; }
+ .sl-point::after { background: Highlight; }
+}
+
+@container sightline (width >= 1100px) {
+ .sl-rail-label, .sl-rail-detail, .sl-guide-index { font-size: 14px; }
+ .sl-step-copy strong, .sl-mode button, .sl-rates button, .sl-loop-buttons button, .sl-time { font-size: 16px; }
+ .sl-step-copy > span, .sl-loop-summary, .sl-loop-summary small { font-size: 13px; }
+ .sl-chapters strong { font-size: 15px; }
+}

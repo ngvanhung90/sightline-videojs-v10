@@ -229,7 +229,7 @@ class LessonScene:
                           fill=PALETTE["accent"], width=max(1, round(radius * 0.02)))
         label_y = center_y + radius + (27 if self.portrait else 48) * self.scale
         self.text(draw, (center_x, label_y), "LEFT HAND" if hand == "L" else "RIGHT HAND",
-                  12 if self.portrait else 26, color="muted", bold=True)
+                  17 if self.portrait else 26, color="muted", bold=True)
 
     def pattern_row(self, draw: ImageDraw.ImageDraw, center_y: float, current_beat: int | None,
                     section: int, time: float, memory: bool, count_in: bool) -> None:
@@ -278,7 +278,7 @@ class LessonScene:
         # Four beats per row keep the actual lesson readable on a narrow picture.
         # These are instructional beat diagrams, not player controls.
         s = self.scale
-        unit, box_w, box_h, row_gap = 86 * s, 70 * s, 56 * s, 90 * s
+        unit, box_w, box_h, row_gap = 94 * s, 78 * s, 64 * s, 90 * s
         double_pair = (2, 3) if section == 2 and time < 20 else (6, 7) if section == 2 else ()
         for index, hand in enumerate(PATTERN):
             row, column = divmod(index, 4)
@@ -293,9 +293,9 @@ class LessonScene:
                 fill=PALETTE["accent"] if active else None,
                 outline=PALETTE["accent"] if active or emphasized else PALETTE["line"],
                 width=max(1, round((2 if emphasized else 1) * s)))
-            self.text(draw, (x, y - 1 * s), "·" if memory else hand, 36,
+            self.text(draw, (x, y - 1 * s), "·" if memory else hand, 42,
                       "accent_ink" if active else ("faint" if count_in else "ink"), bold=True)
-            self.text(draw, (x, y + 44 * s), str(index + 1), 16,
+            self.text(draw, (x, y + 44 * s), str(index + 1), 18,
                       color="accent" if active else "muted")
             if active:
                 pointer_y = y - box_h / 2 - 7 * s
@@ -341,29 +341,27 @@ class LessonScene:
     def draw_portrait(self, draw, time, section, phase_title, instruction, event,
                       in_section, pulse, active_hand, current_beat, memory, count_in):
         s = self.scale
-        self.text(draw, (28 * s, 32 * s), "TAP STUDY", 11, color="muted", anchor="lm")
-        self.text(draw, (self.width - 28 * s, 32 * s), f"0{section + 1} / {phase_title}",
-                  11, color="accent", anchor="rm")
-        self.text(draw, (self.width / 2, 88 * s), "Catch the double.", 36, bold=True)
-        self.wrapped(draw, self.width / 2, 148 * s, instruction, 17, self.width - 60 * s)
-        self.text(draw, (self.width / 2, 206 * s), "Use a tabletop, not the screen.",
-                  12, color="muted")
-        self.hand_diagram(draw, self.width * 0.265, 317 * s, 66 * s,
+        # Sparse portrait composition: one large cue, two hands and two rows.
+        # Caption text provides the detailed verbal instruction below the diagram.
+        self.text(draw, (self.width / 2, 65 * s), "Catch the double.", 34, bold=True)
+        short_cue = ("Listen first.", "Follow both hands.", "Same hand. Twice.", "Play along.", "Your turn.")[section]
+        self.text(draw, (self.width / 2, 125 * s), short_cue, 27, color="accent")
+        self.hand_diagram(draw, self.width * 0.25, 290 * s, 82 * s,
                           "L", active_hand == "L", pulse)
-        self.hand_diagram(draw, self.width * 0.735, 317 * s, 66 * s,
+        self.hand_diagram(draw, self.width * 0.75, 290 * s, 82 * s,
                           "R", active_hand == "R", pulse)
         if count_in:
             number = str(event.beat + 1) if in_section and event.kind == "count-in" else "–"
-            self.text(draw, (self.width / 2, 315 * s), number, 35, color="accent", bold=True)
-            self.text(draw, (self.width / 2, 354 * s), "COUNT", 10, color="muted")
+            self.text(draw, (self.width / 2, 280 * s), number, 35, color="accent", bold=True)
+            self.text(draw, (self.width / 2, 320 * s), "COUNT", 15, color="muted")
         elif memory:
-            self.text(draw, (self.width / 2, 307 * s), "YOUR", 10, color="accent", bold=True)
-            self.text(draw, (self.width / 2, 328 * s), "TURN", 10, color="accent", bold=True)
+            self.text(draw, (self.width / 2, 275 * s), "YOUR", 15, color="accent", bold=True)
+            self.text(draw, (self.width / 2, 300 * s), "TURN", 15, color="accent", bold=True)
         else:
-            self.text(draw, (self.width / 2, 315 * s), "+", 20, color="faint")
+            self.text(draw, (self.width / 2, 280 * s), "+", 20, color="faint")
         sequence_label = ("LEFT DOUBLE · BEATS 3–4" if time < 20 else "RIGHT DOUBLE · BEATS 7–8") \
             if section == 2 else "EIGHT TAPS · EVEN SPACING"
-        self.text(draw, (self.width / 2, 446 * s), sequence_label, 12,
+        self.text(draw, (self.width / 2, 436 * s), sequence_label, 17,
                   color="muted", bold=True)
         self.pattern_row(draw, 496 * s, current_beat, section, time, memory, count_in)
         # The lower120px stay clear for native captions on narrow video.
@@ -406,6 +404,7 @@ def write_video(scene: LessonScene, fps: int, silent: Path, final: Path, audio: 
     command = [ffmpeg, "-nostdin", "-n", "-f", "rawvideo", "-vcodec", "rawvideo",
                "-pix_fmt", "rgb24", "-s", f"{scene.width}x{scene.height}", "-r", str(fps),
                "-i", "pipe:0", "-an", "-c:v", "libx264", "-preset", "fast", "-crf", "18",
+               "-g", str(fps), "-keyint_min", str(fps), "-sc_threshold", "0",
                "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(silent)]
     log_path = silent.with_suffix(".encode.log")
     with log_path.open("x", encoding="utf-8") as log:
