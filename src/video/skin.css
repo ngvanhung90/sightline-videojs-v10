@@ -230,6 +230,8 @@
 .sightline .sl-tools-trigger { display: none; }
 @container sightline (width < 620px) {
   .sl-practice { display: block; }
+  /* Keep native captions legible without covering a portrait lesson's lower diagrams. */
+  .sl-screen video::cue { font-size: 14px; line-height: 1.35; }
   .sightline .sl-tools-trigger { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 10px; padding: 5px 2px; text-align: start; font-size: 12px; }
   .sl-tools-trigger > span:first-of-type { margin-inline-end: auto; }
   .sl-tools-trigger svg { width: 19px; height: 19px; color: var(--sl-accent); }
