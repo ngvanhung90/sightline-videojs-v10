@@ -1,0 +1,42 @@
+{
+  "purpose": "Isolated SIGHTLINE review demo media delivery; original files retained",
+  "created_date": "2026-11-11",
+  "plan": "Mux Video Free; 3 of 10 videos; no payment method, upgrade, Robots or analytics integration",
+  "rendition": "Standard static highest.mp4; Basic quality; max resolution tier 1080p",
+  "integration": "Native Video.js v10 Video, public playback URLs, same mounted media instance and local VTT",
+  "secrets": "None. Asset and playback IDs below identify public demonstration media.",
+  "assets": [
+    {
+      "source": "practice/eight-tap.mp4",
+      "source_sha256": "13e722b1049ac4ab1b3c5711422c761fe37c7a5dde60a303d4c6e971b38ec480",
+      "author": "SIGHTLINE project original illustrated lesson and synthesized clicks",
+      "license": "CC0 1.0",
+      "asset_id": "3ilps2afNigGLNUq5OCvs8EP8JJ7TutedbbxqnLZrXg",
+      "playback_id": "yKH8XV91pZhQMCxxaVxvHCk1HdOAhZjyIP02jYuwFf01M",
+      "url": "https://stream.mux.com/yKH8XV91pZhQMCxxaVxvHCk1HdOAhZjyIP02jYuwFf01M/highest.mp4"
+    },
+    {
+      "source": "practice/eight-tap-portrait.mp4",
+      "source_sha256": "7760ca6e96fdb5fe71ffbfc829d4813a362d21125f57050351eeedf6ebf0dc34",
+      "author": "SIGHTLINE project original illustrated lesson and synthesized clicks",
+      "license": "CC0 1.0",
+      "asset_id": "3ORIXak3yv02YE4M638etAlHGiUWAtQxufr01nsr2AuQM",
+      "playback_id": "7xitq3hbuYjv7HTf00Tz01r1eUrXsZEi3SOD01H136bJN8",
+      "url": "https://stream.mux.com/7xitq3hbuYjv7HTf00Tz01r1eUrXsZEi3SOD01H136bJN8/highest.mp4"
+    },
+    {
+      "source": "handwriting/handwriting.mp4",
+      "source_sha256": "3b508614ba71b07d473f28f4b9f76386d50e2774930eae968bd05dedcacba8c5",
+      "author": "Peter Unbehauen",
+      "title": "Handwriting Minuscule Alphabet",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "original_page": "https://commons.wikimedia.org/wiki/File:Handwriting_Minuscule_Alphabet.webm",
+      "changes": "32-second excerpt beginning at 00:08; original audio removed; H.264 source, Mux rendition transcode; no tempo change; author marks retained",
+      "asset_id": "dYZMaR01LpZ602D9024ceXylhLKXX6GXwb5iHgsmtuyg14",
+      "playback_id": "Bi3TzKqTKcWR3aVVCceKxFNrwNeLbiIHr7zJFXwv022w",
+      "url": "https://stream.mux.com/Bi3TzKqTKcWR3aVVCceKxFNrwNeLbiIHr7zJFXwv022w/highest.mp4"
+    }
+  ],
+  "qualification": "Account setup and rendition-ready status do not prove browser E2E or award a contest bonus. See separate locked-commit test evidence."
+}

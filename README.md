@@ -68,6 +68,8 @@ export function Film() {
 
 Tracks are optional. WebVTT needs a valid MIME type and cross-origin assets need suitable CORS. Keep provider, skin and media mounted across mode changes; supply a fresh sourceKey when choosing another asset. This is client-side native-video support; other media adapters and SSR/Next hydration are not claimed.
 
+The host must deliver seekable media. For progressive MP4, verify actual HTTP Range responses and native `video.seekable` on a cold cache; a fully buffered file alone does not establish seek support. The separate review demo serves its three principal media assets through Mux Free standard `highest.mp4` renditions, with local VTT and poster files. This is a demo delivery choice, not a Mux dependency of the six-file skin. Public playback IDs are in `apps/demo/media-sources.ts`; no API credentials, analytics or extra media adapter are added. The licensed original MP4s remain in the repository. `?delivery=origin` explicitly selects those retained copies as an origin-delivery regression control. See `apps/demo/public/media/MUX-SOURCES.json` for provenance. Mux Free limits apply; no paid plan or payment method was activated. Native browser acceptance is recorded separately from account setup and HTTP probes.
+
 Set `--media-accent-color`, `--media-accent-text-color`, `--media-border-radius` and `--media-font-family` on the skin. Choose accent/text colors together and test contrast.
 
 ## Practice behavior

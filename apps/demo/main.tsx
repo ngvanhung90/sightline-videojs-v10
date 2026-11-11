@@ -4,6 +4,7 @@ import { I18nProvider } from '@videojs/react/i18n';
 import { Video } from '@videojs/react/video';
 import { SightlinePlayer } from '../../src/player';
 import { VideoSkin } from '../../src/video/skin';
+import { demoMediaUrl } from './media-sources';
 import './page.css';
 
 const sources = {
@@ -44,7 +45,7 @@ function DemoPlayer({ compact = false }: { compact?: boolean }) {
     <div className="player-stage">
       <I18nProvider locale="en"><SightlinePlayer>
         <VideoSkin title={selected.title} subtitle={selected.subtitle} sourceKey={source} initialMode={params.get('mode') === 'practice' ? 'practice' : 'watch'} practiceDisabled={params.get('guard') === 'live'} style={{ '--media-accent-color': accent, '--media-border-radius': `${radius}px` } as CSSProperties}>
-          <Video src={`./media/${selected.src}`} poster={selected.poster ? `./media/${selected.poster}` : undefined} preload="auto" playsInline crossOrigin="anonymous">
+          <Video src={demoMediaUrl(selected.src, params.get('delivery') === 'origin')} poster={selected.poster ? `./media/${selected.poster}` : undefined} preload="auto" playsInline crossOrigin="anonymous">
             {selected.chapters && <track key={`${source}-chapters`} kind="chapters" src={`./media/${selected.chapters}`} default />}
             {selected.captions && <track key={`${source}-captions`} kind="captions" src={`./media/${selected.captions}`} label="English" srcLang="en" default />}
           </Video>

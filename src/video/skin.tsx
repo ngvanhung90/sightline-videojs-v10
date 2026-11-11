@@ -187,7 +187,7 @@ export function VideoSkin({
             <button type="button" disabled={!loop.canLoop || loop.pointA === null} aria-label={`${label('Set loop end B')}${loop.pointB !== null ? `, ${formatPoint(loop.pointB)}` : ''}`} onClick={loop.captureB}><b>B</b><span>{loop.pointB === null ? label('Set end') : formatPoint(loop.pointB)}</span></button>
             <button type="button" className="sl-reset" aria-label={label('Reset loop')} disabled={loop.pointA === null && loop.pointB === null} onClick={() => { loop.reset(); chapterTrigger.current?.focus(); }}><Icon name="reset" /><span>{label('Reset')}</span></button>
           </div>
-          {!loop.canLoop && <p className="sl-loop-note">{label('A–B needs a finite, on-demand native video at least 0.25 seconds long.')}</p>}
+          {!loop.canLoop && <p className="sl-loop-note">{label('A–B needs a seekable, on-demand native video at least 0.25 seconds long.')}</p>}
           </div>
         </div>}
         <p className="sl-feedback" role="status" aria-live="polite" aria-atomic="true">{loop.message || notice}</p>
