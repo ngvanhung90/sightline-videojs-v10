@@ -151,3 +151,41 @@ footer > div { display: flex; gap: 18px; color: #526348; font-size: 10px; }
  .mobile-story p:not(.eyebrow) { font-size: 24px; }
  .showcase-caption { font-size: 14px; }
 }
+
+/* Competitive round1: put the working player before the extended explanation. */
+.site-nav + main { display: block; padding-top: 16px; }
+.hero { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 28px; padding: 4px 0 20px; }
+.hero .eyebrow { margin-bottom: 8px; }
+.hero h1 { font-size: clamp(28px, 3vw, 40px); }
+.hero-copy { padding: 0; }
+.hero-copy > p { font-size: 16px; margin-bottom: 6px; }
+.hero-copy > span { font-size: 13px; }
+.hero-copy > a { display: none; }
+.demo-section { padding-bottom: 32px; }
+.player-note { font-size: 12px; }
+.workshop-page { max-width: 1180px; padding: 28px 40px; margin: auto; background: #f6f0e8; color: #3c2b25; }
+.workshop-page > header { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #b6a497; padding-bottom: 20px; font-size: 13px; }
+.workshop-wordmark { font-size: 22px; letter-spacing: .16em; }
+.workshop-intro { padding: 30px 0 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 30px; align-items: end; }
+.workshop-intro > span { font-size: 12px; letter-spacing: .1em; grid-column: 1/-1; }
+.workshop-intro h1 { font: 400 44px/1.1 Georgia,serif; letter-spacing: -.025em; }
+.workshop-intro p { font-size: 15px; margin-bottom: 0; }
+.workshop-page .player-stage { padding: 0; border: 0; background: transparent; border-radius: 6px; }
+.workshop-page .demo-tools { display: none; }
+.workshop-page .sl-screen video { max-height: 49svh; }
+.workshop-page > footer { padding: 20px 0; font-size: 12px; justify-content: space-between; }
+@media (max-width: 700px) {
+ .site-nav + main { padding: 12px 12px 0; }
+ .hero { display: block; padding: 0 8px 16px; }
+ .hero .eyebrow { display: none; }
+ .hero h1 { font-size: 27px; }
+ .hero-copy { padding-top: 8px; }
+ .hero-copy > p { font-size: 15px; margin: 0; }
+ .hero-copy > span { display: none; }
+ .player-note { font-size: 11px; }
+ .workshop-page { padding: 18px 12px; }
+ .workshop-page > header { gap: 12px; font-size: 11px; }
+ .workshop-intro { display: block; padding: 20px 0 16px; }
+ .workshop-intro h1 { font-size: 32px; margin-top: 10px; }
+ .workshop-intro p { font-size: 14px; margin-top: 12px; }
+}

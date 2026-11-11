@@ -1,9 +1,9 @@
 {
   "title": "Catch the double \u2014 an eight-tap study",
-  "generated_at_utc": "2026-11-10T19:11:02.603099+00:00",
+  "generated_at_utc": "2026-11-11T07:35:08.783746+00:00",
   "license": "CC0-1.0",
   "source_license": "Apache-2.0",
-  "source_sha256": "e508ca784461fe9172611b9b273e126fa94d507f6b649d16ba601d14ddbe9e5b",
+  "source_sha256": "0101fa954d7eb0f464b46c1282757f6d41434b30b8984f377fbb4105d6feebd5",
   "duration_seconds": 40,
   "pattern": [
     "L",
@@ -571,23 +571,23 @@
   "files": [
     {
       "file": "eight-tap.mp4",
-      "bytes": 1676129,
-      "sha256": "4f3024c8d4a002a29736b7e74abb70fd8cd369df1c201a96f7a3778a5cf76872"
+      "bytes": 984145,
+      "sha256": "fe1ec5044504317526ceb9c844ce84c26e73a75ecac8b2d0bba634e2bf1a43b8"
     },
     {
       "file": "eight-tap-portrait.mp4",
-      "bytes": 1034448,
-      "sha256": "b5afc8b12a40fad534b7e5614133387ea4f2c696c0482f4dac2e1d897771514c"
+      "bytes": 650839,
+      "sha256": "44fcae7c13b0ac44e442996bd3efacccef17672740e25ccd9fa0ef3fd8bff952"
     },
     {
       "file": "poster.jpg",
-      "bytes": 133047,
-      "sha256": "8ea73a6df5b8d65a505d78ebc2d6c5e5967911283b4940a4d79346e070af5141"
+      "bytes": 136521,
+      "sha256": "8c487e87af1a2b6e82feccd93bab2703da21fe76e766f31875646cc2255a34bd"
     },
     {
       "file": "portrait-poster.jpg",
-      "bytes": 46209,
-      "sha256": "46c63e19631e8cf713833547136de9ce387253ee1073b47e25fd30b1106416a2"
+      "bytes": 47033,
+      "sha256": "078193ff22804e3c82f05a6c70591b09e0785cf894696918aa5303b90bebb68d"
     },
     {
       "file": "chapters.vtt",

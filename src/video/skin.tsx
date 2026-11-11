@@ -60,10 +60,21 @@ export function VideoSkin({
   const chapterMessage = useRef(0);
   const [notice, setNotice] = useState('');
   const durationKnown = Number.isFinite(state.duration) && state.duration > 0;
-  const activeIndex = state.chapters.reduce((latest, cue, index) => state.currentTime >= cue.startTime ? index : latest, -1);
+  const activeIndex = state.chapters.reduce((latest, cue, index) => {
+    const insideCue = state.currentTime >= cue.startTime && state.currentTime < cue.endTime;
+    // Keep the final chapter at the exact ended boundary only when its cue
+    // actually reaches that boundary. Intentional VTT gaps stay unselected.
+    const atFinalEnd = state.ended && durationKnown
+      && state.currentTime === state.duration && cue.endTime === state.duration
+      && cue.startTime < state.duration && index === state.chapters.length - 1;
+    return insideCue || atFinalEnd ? index : latest;
+  }, -1);
   const chapter = state.chapters[activeIndex];
   const chapterName = chapter?.text || (state.chapters.length ? label('Choose a chapter') : label('Your own moment'));
   const pointPercent = (time: number) => durationKnown ? Math.max(0, Math.min(100, time / state.duration * 100)) : 0;
+  const loopProgress = loop.active
+    ? Math.max(0, Math.min(100, (state.currentTime - loop.pointA!) / (loop.pointB! - loop.pointA!) * 100))
+    : 0;
 
   function closeChapters() {
     setChaptersOpen(false);
@@ -122,18 +133,23 @@ export function VideoSkin({
         </div>
 
         <div className="sl-rails" role="group" aria-label={label('Dual guide rails')}>
-          <div className="sl-rail-heading"><span>{label('Playback')}</span><span className="sl-rail-name">{mode === 'practice' ? label('Find it. Slow it. Repeat it.') : label('The picture stays yours.')}</span></div>
+          <div className="sl-playback-rail" data-rail="playback">
+          <div className="sl-rail-label"><span>{label('Playback')}</span></div>
           <TimeSlider.Root className="sl-timeline" thumbAlignment="edge" aria-label={label('Seek')}>
             <TimeSlider.Track className="sl-track"><TimeSlider.Buffer className="sl-buffer" /><TimeSlider.Fill className="sl-fill" /></TimeSlider.Track>
             <TimeSlider.Thumb className="sl-thumb" />
             <TimeSlider.Preview className="sl-preview"><TimeSlider.Value type="pointer" /><TimeSlider.ChapterTitle /></TimeSlider.Preview>
           </TimeSlider.Root>
-          <div className="sl-guide" aria-hidden="true">
+          </div>
+          <div className="sl-guide-rail" data-rail="guide">
+          <div className="sl-rail-label"><span>{label('Guide')}</span><span className="sl-rail-detail">{loop.active ? label('Loop range') : state.chapters.length ? label('Chapters') : label('Practice range')}</span></div>
+          <div className="sl-guide" data-state={loop.active ? 'loop' : state.chapters.length ? 'chapters' : 'empty'} aria-hidden="true">
             <div className="sl-guide-base" />
-            {durationKnown && state.chapters.map((cue, index) => <span key={`${cue.startTime}-${index}`} className={`sl-guide-segment ${index === activeIndex ? 'is-current' : ''}`} style={{ insetInlineStart: `${pointPercent(cue.startTime)}%`, width: `${pointPercent(Math.min(cue.endTime, state.duration)) - pointPercent(cue.startTime)}%` }} />)}
-            {loop.active && <span className="sl-loop-range" style={{ insetInlineStart: `${pointPercent(loop.pointA!)}%`, width: `${pointPercent(loop.pointB!) - pointPercent(loop.pointA!)}%` }} />}
+            {durationKnown && state.chapters.map((cue, index) => <span key={`${cue.startTime}-${index}`} className={`sl-guide-segment ${index === activeIndex ? 'is-current' : ''}`} style={{ insetInlineStart: `${pointPercent(cue.startTime)}%`, width: `${pointPercent(Math.min(cue.endTime, state.duration)) - pointPercent(cue.startTime)}%` }}><span className="sl-guide-index">{index + 1}</span></span>)}
+            {loop.active && <span className="sl-loop-range" style={{ insetInlineStart: `${pointPercent(loop.pointA!)}%`, width: `${pointPercent(loop.pointB!) - pointPercent(loop.pointA!)}%` }}><span className="sl-loop-progress" style={{ width: `${loopProgress}%` }} /></span>}
             {loop.pointA !== null && <span className="sl-point sl-point-a" style={{ insetInlineStart: `${pointPercent(loop.pointA)}%` }}>A</span>}
             {loop.pointB !== null && <span className="sl-point sl-point-b" style={{ insetInlineStart: `${pointPercent(loop.pointB)}%` }}>B</span>}
+          </div>
           </div>
           <div className="sl-guide-meta">
             <button type="button" className="sl-chapter-trigger" ref={chapterTrigger} aria-label={`${label('Chapters')}, ${state.chapters.length}. ${chapterName}`} aria-controls={chapterId} aria-expanded={chaptersOpen} onClick={() => setChaptersOpen(open => !open)}>
@@ -141,8 +157,7 @@ export function VideoSkin({
               <span className="sl-step-copy"><span>{state.chapters.length ? `${label('Chapter')} ${activeIndex >= 0 ? activeIndex + 1 : '—'} / ${state.chapters.length}` : label('Guide rail')}</span><strong>{chapterName}</strong></span>
               <Icon name="chapters" /><span className="sl-open-word">{label('Chapters')}</span>
             </button>
-            {loop.active ? <div className="sl-loop-summary"><span><b>{formatPoint(loop.pointA!)}–{formatPoint(loop.pointB!)}</b><small>{(loop.pointB! - loop.pointA!).toFixed(1)}s · {loop.repeats} {label('repeats')}</small></span><button type="button" onClick={() => { loop.reset(); chapterTrigger.current?.focus(); }}>{label('Stop loop')}</button></div>
-              : <span className="sl-guide-hint">{mode === 'practice' ? label('Your practice range lives here.') : label('Guide rail')}</span>}
+            {loop.active && <div className="sl-loop-summary"><span><b>{formatPoint(loop.pointA!)}–{formatPoint(loop.pointB!)}</b><small>{(loop.pointB! - loop.pointA!).toFixed(1)}s · {loop.repeats} {label('repeats')}</small></span><button type="button" onClick={() => { loop.reset(); chapterTrigger.current?.focus(); }}>{label('Stop loop')}</button></div>}
           </div>
         </div>
 
@@ -175,9 +190,9 @@ export function VideoSkin({
           {!loop.canLoop && <p className="sl-loop-note">{label('A–B needs a finite, on-demand native video at least 0.25 seconds long.')}</p>}
           </div>
         </div>}
+        <p className="sl-feedback" role="status" aria-live="polite" aria-atomic="true">{loop.message || notice}</p>
         <div className="sl-footnote"><span>SIGHTLINE<span className="sl-tiny-rails" aria-hidden="true">〓</span></span><span>{mode === 'watch' ? label('Never cover the moment.') : label('Watch once. Make it yours.')}</span></div>
       </div>
-      <p className="sl-sr" role="status" aria-live="polite" aria-atomic="true">{loop.message || notice}</p>
       <StatusAnnouncer className="sl-sr" labels={{ seekedTo: time => loop.suppressSeekAnnouncement() ? '' : `${label('Seeked to')} ${formatPoint(time)}` }} />
       <Hotkey keys="Space" action="togglePaused" /><Hotkey keys="k" action="togglePaused" />
       <Hotkey keys="m" action="toggleMuted" /><Hotkey keys="f" action="toggleFullscreen" /><Hotkey keys="c" action="toggleSubtitles" />

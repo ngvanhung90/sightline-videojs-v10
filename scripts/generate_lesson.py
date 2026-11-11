@@ -36,8 +36,8 @@ PATTERN = tuple("LRLLRLRR")
 EVENT_OFFSET = 0.25
 INTERVAL = 0.5
 PHASES = (
-    (0.0, "Listen first", "Listen once. Then use your hands."),
-    (8.0, "Left / right", "L is your left hand. R is your right."),
+    (0.0, "Listen first", "Tap left, right. Then repeat the same hand twice."),
+    (8.0, "Left / right", "Follow your left hand, then your right."),
     (16.0, "Catch the doubles", "Keep the gaps equal, even on a double."),
     (24.0, "Try together", "Follow all eight taps. Then repeat."),
     (32.0, "Your turn", "One guided round. Then no hand hints."),
@@ -171,20 +171,62 @@ class LessonScene:
 
     def hand_diagram(self, draw: ImageDraw.ImageDraw, center_x: float, center_y: float,
                      radius: float, hand: str, active: bool, pulse: float) -> None:
-        radius = round(radius)
-        ring_extra = round((5 + pulse * 10) * self.scale)
+        # Original procedural illustration: four fingers plus a thumb (five
+        # digits total), palm and wrist. Back-of-own-hand view: the left thumb
+        # faces inward/right; mirror every point for the right hand. These are
+        # instructional drawings, never claimed to be human camera footage.
+        mirror = 1 if hand == "L" else -1
+        # The existing tap event supplies both activation and pulse. A short
+        # downward contact/release motion introduces no new event clock.
+        contact = pulse if active else 0.0
+        drop = radius * 0.08 * contact
+        fill = PALETTE["accent"] if active else mix_hex(PALETTE["panel"], PALETTE["ink"], 0.62)
+        detail = PALETTE["accent_ink"] if active else PALETTE["desk"]
+        stroke = max(1, round(radius * 0.018))
+
+        def point(x: float, y: float) -> tuple[int, int]:
+            return (round(center_x + mirror * x * radius),
+                    round(center_y + y * radius + drop))
+
+        def box(left: float, top: float, right: float, bottom: float) -> tuple[int, int, int, int]:
+            a, b = point(left, top), point(right, bottom)
+            return (min(a[0], b[0]), min(a[1], b[1]), max(a[0], b[0]), max(a[1], b[1]))
+
+        # Separate rounded fingertips join one broad palm below the knuckles.
+        # Different lengths and visible gaps make the anatomy readable small.
+        fingers = ((-0.51, -0.66, -0.30), (-0.25, -0.94, -0.04),
+                   (0.01, -1.02, 0.22), (0.27, -0.83, 0.48))
+        for left, tip, right in fingers:
+            draw.rounded_rectangle(box(left, tip, right, 0.24),
+                                   radius=max(2, round(radius * 0.10)), fill=fill)
+        draw.rounded_rectangle(box(-0.51, -0.17, 0.48, 0.59),
+                               radius=max(2, round(radius * 0.22)), fill=fill)
+        draw.rounded_rectangle(box(-0.27, 0.43, 0.24, 0.84),
+                               radius=max(2, round(radius * 0.07)), fill=fill)
+        # Angled thumb on the radial side, with its own rounded tip.
+        draw.polygon([point(0.30, 0.04), point(0.67, -0.17),
+                      point(0.83, -0.03), point(0.55, 0.42),
+                      point(0.34, 0.49)], fill=fill)
+        draw.ellipse(box(0.59, -0.22, 0.85, 0.04), fill=fill)
+        draw.line([point(-0.22, 0.56), point(0.19, 0.56)], fill=detail, width=stroke)
+        draw.line([point(0.35, 0.08), point(0.20, 0.32), point(0.21, 0.43)],
+                  fill=detail, width=stroke)
+        for left, tip, right in fingers:
+            draw.line([point(left + 0.045, -0.05), point(right - 0.045, -0.05)],
+                      fill=detail, width=stroke)
+
         if active:
-            draw.ellipse((center_x - radius - ring_extra, center_y - radius - ring_extra,
-                          center_x + radius + ring_extra, center_y + radius + ring_extra),
-                         outline=mix_hex(PALETTE["line"], PALETTE["accent"], pulse),
-                         width=max(2, round(2 * self.scale)))
-        fill = PALETTE["accent"] if active else PALETTE["panel"]
-        outline = PALETTE["accent"] if active else PALETTE["line"]
-        draw.ellipse((center_x - radius, center_y - radius, center_x + radius, center_y + radius),
-                     fill=fill, outline=outline, width=max(2, round(2 * self.scale)))
-        letter_size = 62 if self.portrait else 132
-        self.text(draw, (center_x, center_y - 3 * self.scale), hand, letter_size,
-                  "accent_ink" if active else "ink", bold=True)
+            # Brief tabletop contact mark and outward impact ticks, kept inside
+            # the original diagram/label region, well above caption safe areas.
+            mark_y = center_y + radius * 1.01
+            extent = radius * (0.25 + 0.13 * contact)
+            draw.line([(round(center_x - extent), round(mark_y)),
+                       (round(center_x + extent), round(mark_y))],
+                      fill=PALETTE["accent"], width=max(2, round(radius * 0.025)))
+            for side in (-1, 1):
+                draw.line([(round(center_x + side * radius * 0.52), round(mark_y - radius * 0.13)),
+                           (round(center_x + side * radius * 0.64), round(mark_y - radius * 0.20))],
+                          fill=PALETTE["accent"], width=max(1, round(radius * 0.02)))
         label_y = center_y + radius + (27 if self.portrait else 48) * self.scale
         self.text(draw, (center_x, label_y), "LEFT HAND" if hand == "L" else "RIGHT HAND",
                   12 if self.portrait else 26, color="muted", bold=True)

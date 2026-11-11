@@ -1,0 +1,38 @@
+{
+  "source_page": "https://commons.wikimedia.org/wiki/File:Handwriting_Minuscule_Alphabet.webm",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Handwriting_Minuscule_Alphabet.webm",
+  "author": "Peter Unbehauen",
+  "title": "Handwriting Minuscule Alphabet",
+  "license": "CC BY 3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0/",
+  "sha256": "35c684b1743634e242ca791f1ee172827a4ef84bdefb051b5970e99bcd50c207",
+  "bytes": 34906784,
+  "path": "D:\\Codex-Project-Outputs\\SIGHTLINE\\rescue\\media\\competitive-source1\\handwriting-original.webm",
+  "changes": "original retained unmodified; no endorsement claimed",
+  "excerpt_start": 8.0,
+  "excerpt_duration": 32,
+  "audio_removed": true,
+  "tempo_changed": false,
+  "files": [
+    {
+      "file": "handwriting.mp4",
+      "sha256": "3b508614ba71b07d473f28f4b9f76386d50e2774930eae968bd05dedcacba8c5"
+    },
+    {
+      "file": "poster.jpg",
+      "sha256": "b6dced040ea0240c6761983d3d91c164ef9a759dd85bda3452d6486623414d03"
+    },
+    {
+      "file": "chapters.vtt",
+      "sha256": "0c152a2f3ae2143798b19f44532807e0ca3bb6761e7edf3ce95ff6a4a3641d09"
+    },
+    {
+      "file": "captions-en.vtt",
+      "sha256": "2ef9ddd6dc8b0fe0c8660c5d863669bd45194f52884eb222546984870228f82c"
+    },
+    {
+      "file": "MEDIA-LICENSE.txt",
+      "sha256": "adab85994b033f22308451a78d1cabf8efcd94811a059788f0376da8467f74fc"
+    }
+  ]
+}

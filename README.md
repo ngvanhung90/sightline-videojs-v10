@@ -80,7 +80,11 @@ A–B requires a finite, seekable, on-demand native Video at least 0.25 seconds 
 
 The new 40-second lesson teaches `L R L L R L R R` as a reproducible tabletop exercise, with original diagrams and synchronized synthesized clicks. Chapter 03 highlights the doubles. The 16–20 second bar is a useful repeat range. The sequence is not claimed as an invention or a certified teaching method. No learning-speed or click-count improvement is claimed without measurement.
 
-The generator is `scripts/generate_lesson.py`. The original render, intermediate WAV/silent videos and provenance are retained separately; only published assets are staged in `apps/demo/public/media/practice`. Source is Apache 2.0; original footage/diagrams/audio/VTT are CC0. No external media/font files, paid APIs, analytics, backend or user accounts are added.
+The generator is `scripts/generate_lesson.py`. The original render, intermediate WAV/silent videos and provenance are retained separately; only published assets are staged in `apps/demo/public/media/practice`. The illustrated hands, tap sequence diagrams, synthesized clicks and authored VTT are original CC0 work. Hand movement is an instructional illustration, not a recording of a person.
+
+The second example (`?view=workshop`) uses the same skin with a different brand and real pen movement: **Handwriting Minuscule Alphabet**, by **Peter Unbehauen**, licensed [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/), [source on Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Handwriting_Minuscule_Alphabet.webm). Changes: a 32-second excerpt from 00:08, original audio removed, H.264 encode; no tempo change. Original author marks remain visible. This is an example integration, not a client endorsement. Attribution and hash provenance accompany the media in `apps/demo/public/media/handwriting`.
+
+Code is Apache 2.0. The original lesson is CC0; the third-party calligraphy excerpt remains CC BY 3.0. No paid APIs, analytics, backend, external font downloads or user accounts are added.
 
 ## Verification and approval
 
