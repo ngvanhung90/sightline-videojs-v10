@@ -91,3 +91,18 @@ Firefox, Safari, screen-reader and physical-phone acceptance have not run. No WC
 The90-second product film combines recordings of this working candidate with illustrative Google Flow footage and Tyra narration. Generated scenes are not software evidence. Caption/timestamp, full decode and signal checks passed; full perceptual synchronization acceptance across speakers and headphones is not claimed. The original79-second walkthrough remains available at `/sightline-demo.mp4` for historical links.
 
 Challenge participation, an existing saved entry and final social completion are separate. A saved entry alone is not proof of Completed/Eligible status. Any final completion receipt must come from Contra.
+
+
+## Product gallery and film
+
+[Watch the90-second product film](https://sightline-player.ng-van-hung90.chatgpt.site/sightline-final-90s.mp4). The player below the picture, Practice controls and device layouts shown here are actual SIGHTLINE captures. Device framing and macro views are editorial composition.
+
+![01-Hero-Product](apps/demo/public/showcase/01-Hero-Product.png)
+
+![02-Unique-Function](apps/demo/public/showcase/02-Unique-Function.png)
+
+![03-Real-Use-Cases](apps/demo/public/showcase/03-Real-Use-Cases.png)
+
+![04-Desktop-Mobile](apps/demo/public/showcase/04-Desktop-Mobile.png)
+
+The film reuses illustrative Google Flow shots with mandatory watermarks and the approved Tyra soundtrack. No generated UI is presented as software evidence. Rhythm lesson: original CC0. Calligraphy: Peter Unbehauen, CC BY3.0; excerpt/audio removed, author marks retained. [Source](https://commons.wikimedia.org/wiki/File:Handwriting_Minuscule_Alphabet.webm) · [License](https://creativecommons.org/licenses/by/3.0/).

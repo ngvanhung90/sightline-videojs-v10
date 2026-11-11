@@ -1,0 +1,48 @@
+{
+  "code_commit": "be1359b4fdb8167bbf986571f8a8eaf634b6e3c4",
+  "base_release_commit": "7b5af0f0f52475fceaaa2fce44904f64428565be",
+  "movie_sha256": "9b3cb4666eede0cfb05bfbfd87fdfd7e05f5d2c0a785d87756b0040439d50190",
+  "images": [
+    {
+      "file": "01-Hero-Product.png",
+      "sha256": "8840c2f2cad8d8f42747a99a0830b01ebfab76a7d3f99268ac2b2d80ea16e1d7",
+      "bytes": 644382,
+      "dimensions": [
+        2400,
+        1800
+      ]
+    },
+    {
+      "file": "02-Unique-Function.png",
+      "sha256": "f77767fbaf412387041d9f764477ee30c3249c406c026975c0bec9d8767d3971",
+      "bytes": 887817,
+      "dimensions": [
+        2400,
+        1800
+      ]
+    },
+    {
+      "file": "03-Real-Use-Cases.png",
+      "sha256": "ca2fd46b4b79004f1de321298c0f962f52d3f051947426ed871d9cd517c92734",
+      "bytes": 1163793,
+      "dimensions": [
+        2400,
+        1800
+      ]
+    },
+    {
+      "file": "04-Desktop-Mobile.png",
+      "sha256": "7ccc6bccf07ff7a49ce959e6c75edc8b6864795a2e55b8918eaedeafc6d5cf37",
+      "bytes": 1034586,
+      "dimensions": [
+        2400,
+        1800
+      ]
+    }
+  ],
+  "owner_approved": true,
+  "scope": "Approved static gallery and film only; compiled skin reused unchanged",
+  "contra_entry": "Original Entry1 completed retained; no attachment edit",
+  "legacy79_retained": true,
+  "AUDIO_SYNC_FULL": "NOT_FULLY_CONFIRMED"
+}
