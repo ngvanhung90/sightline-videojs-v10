@@ -1,21 +1,18 @@
-# SIGHTLINE — Guide Deck review candidate
+# SIGHTLINE — Never Cover the Moment
 
-**AWAITING_OWNER_DESIGN_AND_RELEASE_APPROVAL.** This isolated branch does not authorize a Contra edit, social post, duplicate entry, public-repository main update or replacement of the existing demo.
+*Watch the moment. Master the detail.*
 
-SIGHTLINE keeps the picture clear and provides a deliberate practice layer: two time-correlated rails, named VTT chapters, direct rates and exact A–B intervals. Watch and Practice share one Video.js v10 native Video instance. An active loop has a visible stop action in either mode.
+A source-owned Video.js v10 skin for watching and practicing. Playback controls sit below the picture. Watch keeps the essentials close; Practice adds named chapters, direct playback speeds and an exact A–B loop without replacing the media instance.
 
-## Protected baseline
+Playback Rail shows where you are. Guide Rail shows chapters and your active practice range, with labeled A/B points, duration, repeat feedback and an explicit Stop.
 
-- Existing entry: https://contra.com/community/UTpczOTl-sightline-video-player-with-practice-controls
-- Existing public demo: https://sightline-player.ng-van-hung90.chatgpt.site
-- Existing source: https://github.com/ngvanhung90/sightline-videojs-v10
-- Baseline code 59df9092687fa8c808937e89a23f1d23b1b07a8b; receipt documentation 455b8e0125cafc43bfe8d1e8ae50f55187b0b6de.
+- Demo: https://sightline-player.ng-van-hung90.chatgpt.site
+- Source: https://github.com/ngvanhung90/sightline-videojs-v10
+- Original Challenge entry: https://contra.com/community/UTpczOTl-sightline-video-player-with-practice-controls
 
-A fresh account audit found a social-completion gate: the saved entry is currently marked incomplete until its social-post URL is supplied. The earlier receipt proves a saved post, not final eligibility. The Owner-authorized support email asks Contra to confirm completion, editing and judging-version rules. No social completion or existing entry edit has been performed by this rescue branch.
+## Run
 
-## Run the isolated candidate
-
-Node 24 LTS, npm and the committed lockfile are the reproducible baseline.
+Node24 LTS and the committed lockfile are the development baseline.
 
 ```sh
 npm ci
@@ -25,10 +22,6 @@ npm run lint
 npm run build
 npm run build:workbench
 ```
-
-The local candidate uses port 5174. Preview target (Owner-only, separate Site): https://sightline-owner-review.ng-van-hung90.chatgpt.site . Publication and runtime verification are reported separately in the Owner review package.
-
-For the controlled Owner workstation, package/build/media/clone operations must use its reviewed storage producer; do not bypass host admission with the commands above. Ordinary consumers run these commands on their own host.
 
 ## Integrate only six files
 
@@ -68,7 +61,7 @@ export function Film() {
 
 Tracks are optional. WebVTT needs a valid MIME type and cross-origin assets need suitable CORS. Keep provider, skin and media mounted across mode changes; supply a fresh sourceKey when choosing another asset. This is client-side native-video support; other media adapters and SSR/Next hydration are not claimed.
 
-The host must deliver seekable media. For progressive MP4, verify actual HTTP Range responses and native `video.seekable` on a cold cache; a fully buffered file alone does not establish seek support. The separate review demo serves its three principal media assets through Mux Free standard `highest.mp4` renditions, with local VTT and poster files. This is a demo delivery choice, not a Mux dependency of the six-file skin. Public playback IDs are in `apps/demo/media-sources.ts`; no API credentials, analytics or extra media adapter are added. The licensed original MP4s remain in the repository. `?delivery=origin` explicitly selects those retained copies as an origin-delivery regression control. See `apps/demo/public/media/MUX-SOURCES.json` for provenance. Mux Free limits apply; no paid plan or payment method was activated. Native browser acceptance is recorded separately from account setup and HTTP probes.
+The host must deliver seekable media. For progressive MP4, verify actual HTTP Range responses and native `video.seekable` on a cold cache; a fully buffered file alone does not establish seek support. The demo serves its three principal media assets through Mux Free standard `highest.mp4` renditions, with local VTT and poster files. This is a demo delivery choice, not a Mux dependency of the six-file skin. Public playback IDs are in `apps/demo/media-sources.ts`; no API credentials, analytics or extra media adapter are added. The licensed original MP4s remain in the repository. `?delivery=origin` explicitly selects those retained copies as an origin-delivery regression control. See `apps/demo/public/media/MUX-SOURCES.json` for provenance. Mux Free limits apply; no paid plan or payment method was activated. Native browser acceptance is recorded separately from account setup and HTTP probes.
 
 Set `--media-accent-color`, `--media-accent-text-color`, `--media-border-radius` and `--media-font-family` on the skin. Choose accent/text colors together and test contrast.
 
@@ -88,10 +81,13 @@ The second example (`?view=workshop`) uses the same skin with a different brand 
 
 Code is Apache 2.0. The original lesson is CC0; the third-party calligraphy excerpt remains CC BY 3.0. No paid APIs, analytics, backend, external font downloads or user accounts are added.
 
-## Verification and approval
 
-Development checks are distinct from final locked-commit QA. The Owner package records browser/hardware/assistive-technology results individually, including NOT_RUN. No WCAG certification is claimed. The final recording must use only the locked rescue commit at native 1920×1080; old RC captures must not be mixed into it.
+## Verification and limits
 
-The final review package includes actual before/after captures, video, independent comparison and scoring, QA evidence, rule-update status and remaining pre-deadline actions. Existing live content and the saved Contra entry remain unchanged until explicit Owner design and release approval.
+Skin code is locked at `be1359b4fdb8167bbf986571f8a8eaf634b6e3c4`. Any release documentation commit must preserve those six source-file hashes. Clean-clone typecheck, lint, demo and workbench builds passed for that source. Hosted Chromium checks observed actual seek/chapter/rate changes, repeated A–B returns, Stop/Reset, source clearing, mode-state preservation, captions, keyboard and responsive controls. Fullscreen entry/exit was accepted by the Owner through direct use. Touch evidence uses trusted Chrome emulation; it is not a physical-phone test.
 
-The demo chooses the authored portrait lesson on an initial narrow viewport when no source is requested. Resizing does not silently switch a playing source. The selector always exposes the chosen media. Watch/Practice keep the same media instance.
+Firefox, Safari, screen-reader and physical-phone acceptance have not run. No WCAG certification or measured learning-speed improvement is claimed. Live/unknown-duration looping is guarded in code, but a full real-live-stream acceptance suite has not run. Native MP4 delivery must expose a valid seekable range; see the hosting guidance above.
+
+The90-second product film combines recordings of this working candidate with illustrative Google Flow footage and Tyra narration. Generated scenes are not software evidence. Caption/timestamp, full decode and signal checks passed; full perceptual synchronization acceptance across speakers and headphones is not claimed. The original79-second walkthrough remains available at `/sightline-demo.mp4` for historical links.
+
+Challenge participation, an existing saved entry and final social completion are separate. A saved entry alone is not proof of Completed/Eligible status. Any final completion receipt must come from Contra.

@@ -1,0 +1,23 @@
+{
+  "code_commit": "be1359b4fdb8167bbf986571f8a8eaf634b6e3c4",
+  "source_files_sha256": {
+    "src/index.ts": "c9e410e05661612ac3d98b5d059224d0a7a1856c0b35249d429bd11e20da89b8",
+    "src/player.ts": "e827db5ebc2237ec05dff29a010d77bea15ba12cef139868af8adefe83d69f74",
+    "src/video/skin.tsx": "fcf26404b0ef5a832bb915662d9d2a4783b432ff4add8315df5da9d797b3d53d",
+    "src/video/skin.css": "5b022060c6cb765519fc0476826fa92bc28c6a3e16ebd567ec5f632c248942dd",
+    "src/video/icons.tsx": "2b0d124ffc8059a82d88b55c16cfc7679ab4aa119c2ba835860fe600de0c4be3",
+    "src/video/use-practice-loop.ts": "535cda109f2f8c14b0efa9ab3df9c2ef1b37ca008460cc688920b338895babc8"
+  },
+  "clean_film_sha256": "72079a7ecf4e45f3f61c3fbc20718f70a4cd14f3a415cdad226b16eafdba039f",
+  "legacy_movie_sha256": "335636924ba1868def84a822589bdccc9f4e7eac639be03114900a02985d40a5",
+  "contest_entry": "https://contra.com/community/UTpczOTl-sightline-video-player-with-practice-controls",
+  "contest_completion": "Not asserted by release preparation; final Contra receipt required",
+  "core_qa": "Hosted Chromium; fullscreen Owner direct PASS",
+  "unrun": [
+    "Firefox",
+    "Safari",
+    "screen reader",
+    "physical phone"
+  ],
+  "AUDIO_SYNC_FULL": "NOT_FULLY_CONFIRMED"
+}
